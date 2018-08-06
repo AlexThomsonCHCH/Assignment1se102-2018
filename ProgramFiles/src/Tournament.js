@@ -76,11 +76,11 @@ class Tournament {
   }
   
     getMatchResults() {
-    let result = ''
+
     for (let aSport of this.allMySports) {
-      result += aSport.getMatchResults() + View.NEWLINE()
+      aSport.getMatchResults()
     }
-    return result
+    allreturn.appendChild(matchResultsDiv)
   }
   
     getTeamResults() {
@@ -92,17 +92,36 @@ class Tournament {
   }
   
   getAll() {
-    let result = 'Programming Assignment 2' + View.NEWLINE()
-    result += this + View.NEWLINE()
+    //create heading for match results
+    var head2_1 = document.createElement('h2')
+    var head2_1Node = document.createTextNode('Match Results')
+    head2_1.appendChild(head2_1Node)
+    matchResultsDiv.appendChild(head2_1)
+    
+    //create para for match results
+    this.getMatchResults()
+    
+    
+    //allreturn.appendChild(p1)
+    var head2_2 = document.createElement('h2')
+    var head2_2Node = document.createTextNode('Team Results')
+    head2_2.appendChild(head2_2Node)
+    allreturn.appendChild(head2_2)
+
+    //append all dynamic content
+    let theDisplay = document.getElementById( 'divDisplay')
+    theDisplay.appendChild(allreturn)
+    
+
     //result += 'TEAMS' + View.NEWLINE() +  View.NEWLINE() + this.getSports() + View.NEWLINE()
     //result += 'TEAMS' + View.NEWLINE() +  View.NEWLINE() + this.getTeams() + View.NEWLINE()
     //result += 'POOLS' + View.NEWLINE() +  View.NEWLINE() + this.getPools() + View.NEWLINE()
-    result += 'MATCH RESULTS' + View.NEWLINE() +  View.NEWLINE() + this.getMatchResults() + View.NEWLINE()
-    result += 'TEAM RESULTS' + View.NEWLINE() +  View.NEWLINE() + this.getTeamResults() + View.NEWLINE()
+    //result +=  + this.getMatchResults() + View.NEWLINE()
+    //result += 'TEAM RESULTS' + View.NEWLINE() +  View.NEWLINE() + this.getTeamResults() + View.NEWLINE()
     //result += 'NZ MATCHES' + View.NEWLINE() +  View.NEWLINE() + this.getNZMatches() + View.NEWLINE()
     //result += 'PARTICIPATION ANALYSIS' + View.NEWLINE() +  View.NEWLINE() + this.getParticipation() + View.NEWLINE()
-    result += 'MATCHES RESULTS' + View.NEWLINE() +  View.NEWLINE() + this.getResults() + View.NEWLINE()
-    return result
+    //result += 'MATCHES RESULTS' + View.NEWLINE() +  View.NEWLINE() + this.getResults() + View.NEWLINE()
+    //return result
   }
   
   findSport (targetName) {

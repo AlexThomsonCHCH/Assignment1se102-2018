@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>BCSE101 18S1 Programming Assignment 1</title>
   <!-- include source files here... -->
+   
   <script src="src/SetExtensions.js"></script>
   <script src="src/View.js"></script>
   <script src="src/Team.js"></script>
@@ -14,23 +15,38 @@
   <script src="src/Controller.js"></script>
   <script src="src/addPoolResults.js"></script>
   <script src="src/shortNames.js"></script>
-  <div id="divDisplay"></div>
+  <link rel="stylesheet" href="Styling/stylesheet.css">
 </head>
           
 <body>
+  <header>
+    <h1>The 2018 Commonwealth Games</h1>
+    <div id="imageSelector"></div>
+  </header>
+  <main>
+      <div id="divDisplay"></div>
+  </main>
   <script>
   var the2018Games // GLOBAL FOR DEBUGGING
     var go = function () {
       the2018Games = Controller.setup()
       let theDisplay = document.getElementById( 'divDisplay')
-      document.body.style.fontFamily = 'Courier New'
       addPoolResults(the2018Games) // NEW LINE FOR ASSIGNMENT 2
       addShortNames(the2018Games) // NEW LINE FOR ASSIGNMENT 2
-      theDisplay.innerHTML = the2018Games.getAll()
+      theDisplay.body = the2018Games.getAll()
       console.log( the2018Games ) 
     }
+
     window.onload = go;
+
+    //assign global variables for some Child Divs
+    var allreturn = document.createElement('div')
+    allreturn.id = 'allreturn'
+
+    var matchResultsDiv = document.createElement('div')
+    matchResultsDiv.id = 'matchResultsDiv'
+
   </script> 
-</body> 
+</body>
  
 </html>

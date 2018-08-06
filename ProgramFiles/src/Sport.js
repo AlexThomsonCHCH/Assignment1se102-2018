@@ -112,11 +112,23 @@ class Sport {
   
   getMatchResults () {
     this.sortMatchesByPool()
-    let result = '*' + this.name + View.NEWLINE()
+
+    var sportgetmatchdiv = document.createElement('div')
+    sportgetmatchdiv.id = 'sportDiv'
+
+    var getMatchPara = document.createElement('p')
+    var getMatchHeading = document.createElement('h3')
+    var getMatchHeadingNode = document.createTextNode(this.name)
+    getMatchHeading.appendChild(getMatchHeadingNode)
     for (let aMatch of this.allMyMatches) {
-      result += aMatch + View.NEWLINE()
+      let result = ''
+      result += aMatch
+      var paranode = document.createTextNode(result+ '\n')
+      getMatchPara.appendChild(paranode)
     }
-    return result
+    sportgetmatchdiv.appendChild(getMatchHeading)
+    sportgetmatchdiv.appendChild(getMatchPara)
+    matchResultsDiv.appendChild(sportgetmatchdiv)
   }
   
   
@@ -154,7 +166,12 @@ class Sport {
   }
   
   getResults () {
-    let result = `Results for ${this.name}` + View.NEWLINE()
+    var head3 = document.createElement("h3")
+    var para = document.createElement('p')
+    var element = document.getElementById("divDisplay");
+    var nodeSportName = document.createTextNode(`Results for ${this.name}` + View.NEWLINE())
+    head3.appendChild(nodeSportName)
+    element.appendChild(head3)
     this.sortPools()
     for (let aMatch of this.allMyMatches) {
       let thePool = aMatch.myPool
@@ -162,10 +179,10 @@ class Sport {
     }
     
     for (let aPool of this.allMyPools) {
-      result += aPool + View.NEWLINE()
-      result += aPool.getResults()
+      var nodePool = document.createTextNode(aPool + View.NEWLINE + aPool.getResults())
+      para.appendChild(nodePool)
     }
-    return result
+    element.appendChild(para)
   }
   
     sortTeams () {
