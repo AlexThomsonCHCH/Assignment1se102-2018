@@ -43,11 +43,11 @@ class View {
     return result
   }
   
-  static padRight (original, targetSize=7) {
+  static padRight (original, targetSize=15) {
     let result = '' + original
     let size = result.length
     while (size < targetSize){
-      result += View.SPACE()
+      result += ' '
       size += 1
     }
     return result

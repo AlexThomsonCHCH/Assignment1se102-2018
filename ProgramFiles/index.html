@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>BCSE101 18S1 Programming Assignment 1</title>
+
   <!-- include source files here... -->
-   
   <script src="src/SetExtensions.js"></script>
   <script src="src/View.js"></script>
   <script src="src/Team.js"></script>
@@ -20,14 +20,23 @@
           
 <body>
   <header>
-    <h1>The 2018 Commonwealth Games</h1>
-    <div id="imageSelector"></div>
+    <!--Create a set of divs for the two seperate sections of the header (title and style selections) -->
+    <div id="page-title">
+      <h1>The 2018 Commonwealth Games</h1>
+    </div>
+    <div id="imageSelector">
+      <!--This Is Planned to have a button for a Style Selection based on Flag. (Bg, colours etc.)-->
+    </div>
   </header>
+
   <main>
-      <div id="divDisplay"></div>
+    <!--The Div where Information is displayed is placed here to allow for output-->
+    <div id="divDisplay"></div>
   </main>
+
   <script>
-  var the2018Games // GLOBAL FOR DEBUGGING
+    //This area is where the script for dynamic content and tournament is run.
+    var the2018Games // GLOBAL FOR DEBUGGING
     var go = function () {
       the2018Games = Controller.setup()
       let theDisplay = document.getElementById( 'divDisplay')
@@ -39,14 +48,23 @@
 
     window.onload = go;
 
-    //assign global variables for some Child Divs
+    //assign global variables for some Child Divs in order to display correctly
+
+    //rootdiv
     var allreturn = document.createElement('div')
     allreturn.id = 'allreturn'
-
+    
+    //Div for all matches
     var matchResultsDiv = document.createElement('div')
     matchResultsDiv.id = 'matchResultsDiv'
+    matchResultsDiv.className = "resultsDiv"
+
+    //Div for all Team Results
+    var teamResultsDiv = document.createElement('div')
+    teamResultsDiv.id = 'teamResultsDiv'
+    teamResultsDiv.className = "resultsDiv"
 
   </script> 
+
 </body>
- 
 </html>

@@ -46,7 +46,7 @@ class Sport {
       return 0
     })
   }
-  addPool (newName) {
+     {
     let name = newName.trim()
     let aPool = this.findPool(name) 
     if (! aPool) {
@@ -95,7 +95,7 @@ class Sport {
   }
   
   
-    sortMatchesByPool ()  {
+  sortMatchesByPool ()  {
     this.allMyMatches.sort((a,b) => {
       if (a.myPool.name < b.myPool.name) {
         return -1
@@ -114,12 +114,14 @@ class Sport {
     this.sortMatchesByPool()
 
     var sportgetmatchdiv = document.createElement('div')
-    sportgetmatchdiv.id = 'sportDiv'
+    sportgetmatchdiv.className = 'sportDiv'
 
     var getMatchPara = document.createElement('p')
     var getMatchHeading = document.createElement('h3')
     var getMatchHeadingNode = document.createTextNode(this.name)
+
     getMatchHeading.appendChild(getMatchHeadingNode)
+
     for (let aMatch of this.allMyMatches) {
       let result = ''
       result += aMatch
@@ -185,7 +187,7 @@ class Sport {
     element.appendChild(para)
   }
   
-    sortTeams () {
+  sortTeams () {
     this.allMyTeams.sort((a, b) => {
       if (a.name < b.name) {
         return -1
@@ -198,13 +200,27 @@ class Sport {
   } 
   
   
-    getTeamResults() {
+  getTeamResults() {
     this.sortTeams()
-    let result = '*' + this.name + View.NEWLINE()
+
+    var sportgetteamsdiv = document.createElement('div')
+    sportgetteamsdiv.className = 'sportDiv'
+
+    var getTeamResultsPara = document.createElement('p')
+    var getTeamResultsHeading = document.createElement("h3")
+    var getTeamResultsHeadingNode = document.createTextNode(this.name)
+    getTeamResultsHeading.appendChild(getTeamResultsHeadingNode)
+    sportgetteamsdiv.appendChild(getTeamResultsHeading)
+
+
     for (let aTeam of this.allMyTeams) {
-      result += View.padRight(aTeam, 20) + aTeam.getResults() + View.NEWLINE()
+      let result = ''
+      result += aTeam.getResults()
+      var paranode = document.createTextNode(result + '\n')
+      getTeamResultsPara.appendChild(paranode)
     }
-    result += View.NEWLINE()
-    return result
+    sportgetteamsdiv.appendChild(getTeamResultsHeading)
+    sportgetteamsdiv.appendChild(getTeamResultsPara)
+    teamResultsDiv.appendChild(sportgetteamsdiv)
   }
 }

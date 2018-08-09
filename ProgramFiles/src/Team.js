@@ -29,7 +29,7 @@ class Team {
     return this.name
   }
   getResults () {
-    let result = View.SPACES(4)
+    let result = View.padRight(this.name)
     result += View.padRight(this.matchesPlayed)
     result += View.padRight(this.matchesWon)
     result += View.padRight(this.matchesLost)
