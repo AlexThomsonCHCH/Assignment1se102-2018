@@ -46,7 +46,8 @@ class Sport {
       return 0
     })
   }
-     {
+
+  addPool(newName) {
     let name = newName.trim()
     let aPool = this.findPool(name) 
     if (! aPool) {
@@ -55,6 +56,7 @@ class Sport {
     }
     return aPool
   }
+  
   addMatch(newYear, newMonth, newDay, newHour, newMinute, newPoolName, newTeamNameA, newTeamNameB){
     let when = new Date(newYear, newMonth, newDay, newHour, newMinute)
     let thePool = this.addPool(newPoolName)
