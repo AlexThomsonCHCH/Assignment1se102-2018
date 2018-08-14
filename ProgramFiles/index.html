@@ -22,10 +22,18 @@
   <header>
     <!--Create a set of divs for the two seperate sections of the header (title and style selections) -->
     <div id="page-title">
+      <img src='styling/images/logo.png' id="logo">
       <h1>The 2018 Commonwealth Games</h1>
     </div>
     <div id="imageSelector">
       <!--This Is Planned to have a button for a Style Selection based on Flag. (Bg, colours etc.)-->
+      <!--<label for="image">Choose Your Team:</label>
+      <select id="image"> 
+        
+        <option value="images/firefoxos.png" selected="">Firefox</option>
+        <option value="images/crocodile.png">Crocodile</option>
+        <opt>ion value="images/tortoise.png">Tortoise</option>
+      </select>-->
     </div>
   </header>
 
@@ -63,6 +71,11 @@
     var teamResultsDiv = document.createElement('div')
     teamResultsDiv.id = 'teamResultsDiv'
     teamResultsDiv.className = "resultsDiv"
+
+    //Div for all results table
+    var resultsDiv = document.createElement('div')
+    resultsDiv.id = 'resultsDiv'
+    resultsDiv.className = "resultsDiv"
 
   </script> 
 

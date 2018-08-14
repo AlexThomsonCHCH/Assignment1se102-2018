@@ -7,6 +7,7 @@ h1, h2, h3 {
 
 h1 {
     text-align: left;
+    font-size: 3vw;
 }
 
 h2 { 
@@ -23,15 +24,28 @@ main{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.sportDiv h3 {
+    font-size: 1vw;
+}
+
 .sportDiv {
-    padding-left: 0.1cm;
+    font-size: 0.8vw;
     margin: 0cm;
     background-color:rgba(255, 255, 255, 1);
     white-space: pre;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-/*==================== Colors & Background ====================== */
+#teamResultsDiv p{
+    font-size: 0.8vw;
+}
+
+#resultsDiv p {
+    font-size: 0.95vw;
+}
+
+
+/*======================= Colors & Background ========================== */
 
 header{
     background-color:rgba(200, 200, 200, 0.9); 
@@ -54,21 +68,42 @@ main{
 
 .sportDiv {
     font-kerning: none;
+    flex-grow: 1;
     letter-spacing: 0px;
     background-color:rgba(255, 255, 255, 1);
 }
 
 /* =============== padding & layout ============== */
 
-#allreturn {
-    display: flex;
+
+.resultsDiv{
+    padding: 0.1cm;
+    flex-grow: 2
+
 }
 
-h1 {
-    padding-left: 1cm;
+#logo {
+    width: 75px;
+    height: 100px;
+    padding-left: 4mm;
+    padding-right: 4mm;
+}
+#allreturn {
+    width: 1200px;
+    display: flex;
+    align-content: stretch;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+#page-title {
+    display: flex;
+    align-content: stretch; 
 }
 
 header{
+    align-content: stretch;
+    display: flex;
     padding-top: 0.5cm;
     padding-bottom: 0.5cm;
 }
@@ -79,19 +114,20 @@ body {
 }
 
 main{
-    padding-right: 0cm;
-    padding-left: 0cm;
+    padding-right: 0.1cm;
+    padding-left: 0.1cm;
     padding-bottom: 0.25cm;
     padding-top: 0.25cm;
     align-items: center;
 }
 
 .resultsDiv{
-    padding: 0.4cm; 
-    margin: 0.4cm;
+    padding: 0.3cm; 
+    margin: 0.3cm;
 }
 
-#sportDiv {
+.sportDiv {
     padding-left: 0.1cm;
+    padding-right: 0.1cm;
     margin: 0cm;
 }

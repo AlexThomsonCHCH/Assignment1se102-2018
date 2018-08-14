@@ -1,0 +1,33 @@
+Microsoft Windows [Version 10.0.17134.165]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src>standard
+standard: Use JavaScript Standard Style (https://standardjs.com)
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\PoolResults.js:1:5: 'addPoolResults' is assigned a value but never used.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\SetExtensions.js:2:1: Set prototype is read only, properties should not be added.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\SetExtensions.js:10:1: Set prototype is read only, properties should not be added.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\SetExtensions.js:20:1: Set prototype is read only, properties should not be added.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Sport.js:142:5: 'matchResultsDiv' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Sport.js:198:5: 'resultsDiv' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Sport.js:201:3: Duplicate name 'sortTeams'. //YOUR MODEL ANSWER FAILS STANDARD JS????
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Sport.js:233:5: 'teamResultsDiv' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:53:9: 'result' is assigned a value but never used.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:67:9: 'all3Set' is assigned a value but never used.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:95:9: Identifier 'head2_1' is not in camel case.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:96:9: Identifier 'head2_1Node' is not in camel case.  
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:98:5: 'matchResultsDiv' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:99:5: 'allreturn' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:99:27: 'matchResultsDiv' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:102:9: Identifier 'head2_2' is not in camel case.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:103:9: Identifier 'head2_2Node' is not in camel case.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:105:5: 'teamResultsDiv' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:106:5: 'allreturn' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:106:27: 'teamResultsDiv' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:109:9: Identifier 'head2_3' is not in camel case.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:110:9: Identifier 'head2_3Node' is not in camel case.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:112:5: 'resultsDiv' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:113:5: 'allreturn' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:113:27: 'resultsDiv' is not defined.
+  c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:122:28: 'allreturn' is not defined.
+
+c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src>

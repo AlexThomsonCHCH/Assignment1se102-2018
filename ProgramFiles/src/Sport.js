@@ -1,4 +1,5 @@
-class Sport {
+/* global View Pool Team Match matchResultsDiv resultsDiv teamResultsDiv */
+class Sport {// eslint-disable-line no-unused-vars
   constructor (newName, newVenue) {
     this.name = newName
     this.venue = newVenue
@@ -6,20 +7,24 @@ class Sport {
     this.allMyTeams = []
     this.allMyMatches = []
   }
-  toString() {
-      return `${this.name} at ${this.venue}`
+
+  toString () {
+    return `${this.name} at ${this.venue}`
   }
+
   findTeam (targetName) {
     return this.allMyTeams.find(aTeam => aTeam.name === targetName)
   }
-  addTeam(newName){
-    let aTeam = this.findTeam(newName) 
-    if (! aTeam) {
+
+  addTeam (newName) {
+    let aTeam = this.findTeam(newName)
+    if (!aTeam) {
       aTeam = new Team(newName)
       this.allMyTeams.push(aTeam)
     }
     return aTeam
   }
+
   sortTeams () {
     this.allMyTeams.sort((a, b) => {
       if (a.name < b.name) {
@@ -30,11 +35,12 @@ class Sport {
       } // a must be equal to b
       return 0
     })
-  } 
+  }
 
   findPool (targetName) {
-     return this.allMyPools.find(aPool => aPool.name === targetName)
+    return this.allMyPools.find(aPool => aPool.name === targetName)
   }
+
   sortPools () {
     this.allMyPools.sort((a, b) => {
       if (a.name < b.name) {
@@ -47,17 +53,17 @@ class Sport {
     })
   }
 
-  addPool(newName) {
+  addPool (newName) {
     let name = newName.trim()
-    let aPool = this.findPool(name) 
-    if (! aPool) {
+    let aPool = this.findPool(name)
+    if (!aPool) {
       aPool = new Pool(name)
       this.allMyPools.push(aPool)
     }
     return aPool
   }
-  
-  addMatch(newYear, newMonth, newDay, newHour, newMinute, newPoolName, newTeamNameA, newTeamNameB){
+
+  addMatch (newYear, newMonth, newDay, newHour, newMinute, newPoolName, newTeamNameA, newTeamNameB) {
     let when = new Date(newYear, newMonth, newDay, newHour, newMinute)
     let thePool = this.addPool(newPoolName)
     let teamA = this.addTeam(newTeamNameA)
@@ -65,9 +71,11 @@ class Sport {
     thePool.addTeam(teamA)
     thePool.addTeam(teamB)
     let newMatch = new Match(when, thePool, teamA, teamB)
+    thePool.allMyMatches.push(newMatch)
     this.allMyMatches.push(newMatch)
-    }
-  sortMatches() {
+  }
+
+  sortMatches () {
     this.allMyMatches.sort((a, b) => {
       if (a.when < b.when) {
         return -1
@@ -78,7 +86,8 @@ class Sport {
       return 0
     })
   }
-  getTeams() {
+
+  getTeams () {
     this.sortTeams()
     let result = '*' + this.name + View.NEWLINE()
     for (let aTeam of this.allMyTeams) {
@@ -87,6 +96,7 @@ class Sport {
     result += View.NEWLINE()
     return result
   }
+
   getPools () {
     this.sortPools()
     let result = '*' + this.name + View.NEWLINE()
@@ -95,23 +105,20 @@ class Sport {
     }
     return result
   }
-  
-  
-  sortMatchesByPool ()  {
-    this.allMyMatches.sort((a,b) => {
+
+  sortMatchesByPool () {
+    this.allMyMatches.sort((a, b) => {
       if (a.myPool.name < b.myPool.name) {
         return -1
       }
       if (a.myPool.name > b.myPool.name) {
         return 1
+      } else {
+        return 0
       }
-       else{
-         return 0
-       }
-  })
-    
+    })
   }
-  
+
   getMatchResults () {
     this.sortMatchesByPool()
 
@@ -127,15 +134,14 @@ class Sport {
     for (let aMatch of this.allMyMatches) {
       let result = ''
       result += aMatch
-      var paranode = document.createTextNode(result+ '\n')
+      var paranode = document.createTextNode(result + '\n')
       getMatchPara.appendChild(paranode)
     }
     sportgetmatchdiv.appendChild(getMatchHeading)
     sportgetmatchdiv.appendChild(getMatchPara)
     matchResultsDiv.appendChild(sportgetmatchdiv)
   }
-  
-  
+
   getNZMatches () {
     this.sortMatchesByPool()
     let result = '*' + this.name + View.NEWLINE()
@@ -146,49 +152,52 @@ class Sport {
     }
     return result
   }
-  //--------------------------------------------------------------------------
-  findMatch(winner, looser) {
-   return this.allMyMatches.find(aMatch => ((aMatch.myTeamA === winner && aMatch.myTeamB === looser) || (aMatch.myTeamB === winner && aMatch.myTeamA === looser)))
+
+  findMatch (winner, looser) {
+    return this.allMyMatches.find(aMatch => ((aMatch.myTeamA === winner && aMatch.myTeamB === looser) || (aMatch.myTeamB === winner && aMatch.myTeamA === looser)))
   }
-  
-  addPoolResult (winnerName, looserName, newWinnwerScore, newLooserScore) {
+
+  addPoolResult (winnerName, looserName, newWinnerScore, newLooserScore) {
     let winner = this.findTeam(winnerName)
     let looser = this.findTeam(looserName)
     let theMatch = this.findMatch(winner, looser)
-    let scoreA = newWinnwerScore
+    let scoreA = newWinnerScore
     let scoreB = newLooserScore
-    if (theMatch.myTeamA.name !== winner.name){
+    if (theMatch.myTeamA.name !== winner.name) {
       scoreA = newLooserScore
-      scoreB = newWinnwerScore
+      scoreB = newWinnerScore
     }
     theMatch.addResult(scoreA, scoreB)
   }
 
-  addShortName (fullTeamName, shortTeamName){
+  addShortName (fullTeamName, shortTeamName) {
     let theTeam = this.findTeam(fullTeamName)
     theTeam.shortName = shortTeamName
   }
-  
+
   getResults () {
-    var head3 = document.createElement("h3")
-    var para = document.createElement('p')
-    var element = document.getElementById("divDisplay");
-    var nodeSportName = document.createTextNode(`Results for ${this.name}` + View.NEWLINE())
-    head3.appendChild(nodeSportName)
-    element.appendChild(head3)
     this.sortPools()
-    for (let aMatch of this.allMyMatches) {
-      let thePool = aMatch.myPool
-      thePool.addMatch(aMatch)
-    }
-    
+
+    var sportresultsdiv = document.createElement('div')
+    sportresultsdiv.className = 'sportDiv'
+
+    var getResultsPara = document.createElement('p')
+    var getResultsHeading = document.createElement('h3')
+    var getResultsHeadingNode = document.createTextNode(this.name)
+    getResultsHeading.appendChild(getResultsHeadingNode)
+    sportresultsdiv.appendChild(getResultsHeading)
+
     for (let aPool of this.allMyPools) {
-      var nodePool = document.createTextNode(aPool + View.NEWLINE + aPool.getResults())
-      para.appendChild(nodePool)
+      let result = ''
+      result += aPool.getResults()
+      var paranode = document.createTextNode(result + '\n')
+      getResultsPara.appendChild(paranode)
     }
-    element.appendChild(para)
+    sportresultsdiv.appendChild(getResultsHeading)
+    sportresultsdiv.appendChild(getResultsPara)
+    resultsDiv.appendChild(sportresultsdiv)
   }
-  
+
   sortTeams () {
     this.allMyTeams.sort((a, b) => {
       if (a.name < b.name) {
@@ -199,24 +208,22 @@ class Sport {
       } // a must be equal to b
       return 0
     })
-  } 
-  
-  
-  getTeamResults() {
+  }
+
+  getTeamResults () {
     this.sortTeams()
 
     var sportgetteamsdiv = document.createElement('div')
     sportgetteamsdiv.className = 'sportDiv'
 
     var getTeamResultsPara = document.createElement('p')
-    var getTeamResultsHeading = document.createElement("h3")
+    var getTeamResultsHeading = document.createElement('h3')
     var getTeamResultsHeadingNode = document.createTextNode(this.name)
     getTeamResultsHeading.appendChild(getTeamResultsHeadingNode)
     sportgetteamsdiv.appendChild(getTeamResultsHeading)
 
-
     for (let aTeam of this.allMyTeams) {
-      let result = ''
+      let result = View.padRight(aTeam) + ' '
       result += aTeam.getResults()
       var paranode = document.createTextNode(result + '\n')
       getTeamResultsPara.appendChild(paranode)
