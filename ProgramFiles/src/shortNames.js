@@ -1,4 +1,7 @@
-var addShortNames = function (theTournament) {
+// This Page was added in SE101 Assignment 2 for the table to return short names. Just adds short name data to each team.
+// TODO: Nothing as of Page Commented
+// Page Commented by DEV: Alex T 16/08/2018
+var addShortNames = function (theTournament) { // eslint-disable-line no-unused-vars
   let aSport = theTournament.findSport('Netball')
 
   aSport.addShortName('Australia', 'AUS')

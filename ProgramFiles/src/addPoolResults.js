@@ -1,5 +1,9 @@
-// eslint-disable-line no-unused-vars
-var addPoolResults = function (theTournament) {
+// This Page was added in SE101 Assignment 3 to add results to all of the matches displayed in se101 Assignment 2
+// TODO: Move these into a CSV FILE in order to reduce code amount in this Section
+// Page Commented by DEV: Alex T 16/08/2018
+
+var addPoolResults = function (theTournament) { // eslint-disable-line no-unused-vars
+  //NetBall
   let aSport = theTournament.findSport('Netball')
   aSport.addPoolResult('Australia', 'Jamaica', 72, 51)
   aSport.addPoolResult('Australia', 'South Africa', 60, 38)
@@ -16,7 +20,6 @@ var addPoolResults = function (theTournament) {
   aSport.addPoolResult('Northern Ireland', 'Barbados', 49, 39)
   aSport.addPoolResult('Northern Ireland', 'Fiji', 73, 46)
   aSport.addPoolResult('Barbados', 'Fiji', 65, 44)
-
   aSport.addPoolResult('England', 'New Zealand', 54, 45)
   aSport.addPoolResult('England', 'Uganda', 55, 49)
   aSport.addPoolResult('England', 'Malawi', 74, 49)
@@ -33,6 +36,7 @@ var addPoolResults = function (theTournament) {
   aSport.addPoolResult('Malawi', 'Wales', 68, 53)
   aSport.addPoolResult('Scotland', 'Wales', 51, 47)
 
+  //Men's Rugby Sevens
   aSport = theTournament.findSport('Men\'s Rugby Sevens')
   aSport.addPoolResult('Australia', 'Samoa', 24, 7)
   aSport.addPoolResult('England', 'Jamaica', 38, 5)
@@ -59,6 +63,7 @@ var addPoolResults = function (theTournament) {
   aSport.addPoolResult('Papua New Guinea', 'Malaysia', 31, 5)
   aSport.addPoolResult('South Africa', 'Scotland', 26, 5)
 
+  //womens rugby sevens
   aSport = theTournament.findSport('Women\'s Rugby Sevens')
   aSport.addPoolResult('Canada', 'South Africa', 29, 0)
   aSport.addPoolResult('New Zealand', 'Kenya', 45, 0)

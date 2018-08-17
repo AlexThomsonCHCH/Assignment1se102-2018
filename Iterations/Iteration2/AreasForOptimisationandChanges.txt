@@ -1,0 +1,57 @@
+StandardJS: Fix external script files that return "Variables undefined":
+    Log before:
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\Styling\dynamicStyling.js:2:10: 'makeLabel' is defined but never used.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\Styling\dynamicStyling.js:11:10: 'makeInput' is defined but never used.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\Styling\dynamicStyling.js:16:7: 'att' is already defined.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\PoolResults.js:1:5: 'addPoolResults' is assigned a value but never used.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\SetExtensions.js:2:1: Set prototype is read only, properties should not be added.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\SetExtensions.js:10:1: Set prototype is read only, properties should not be added.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\SetExtensions.js:20:1: Set prototype is read only, properties should not be added.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Sport.js:201:3: Duplicate name 'sortTeams'.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:31:1: Trailing spaces not allowed.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:67:9: 'all3Set' is assigned a value but never used.  
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:95:9: Identifier 'head2_1' is not in camel case.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:96:9: Identifier 'head2_1Node' is not in camel case.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:98:5: 'matchResultsDiv' is not defined.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:99:5: 'allreturn' is not defined.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:99:27: 'matchResultsDiv' is not defined.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:102:9: Identifier 'head2_2' is not in camel case.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:103:9: Identifier 'head2_2Node' is not in camel case.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:105:5: 'teamResultsDiv' is not defined.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:106:5: 'allreturn' is not defined.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:106:27: 'teamResultsDiv' is not defined.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:109:9: Identifier 'head2_3' is not in camel case.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:110:9: Identifier 'head2_3Node' is not in camel case.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:112:5: 'resultsDiv' is not defined.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:113:5: 'allreturn' is not defined.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:113:27: 'resultsDiv' is not defined.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:122:28: 'allreturn' is not defined.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\addPoolResults.js:2:5: 'addPoolResults' is assigned a value but never used.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\shortNames.js:1:5: 'addShortNames' is assigned a value but never
+        used.
+
+    Log after:
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:96:9: Identifier 'head2_1' is not in camel case.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:97:9: Identifier 'head2_1Node' is not in camel case.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:103:9: Identifier 'head2_2' is not in camel case.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:104:9: Identifier 'head2_2Node' is not in camel case.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:110:9: Identifier 'head2_3' is not in camel case.
+        c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:111:9: Identifier 'head2_3Node' is not in camel case.
+    
+    These remaining 'errors' are actually not errors in my professional judgement. The Variables require a differentiator for the same type of object, but do not actually break the rules of camel case.
+
+Sport: Remove Duplicate Functions sortTeams()
+    See StandardJS line 10 "c:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Sport.js:201:3: Duplicate name 'sortTeams'."
+    Sport.js Lines 201-211 Removed and tested. No Changes detected to output order.
+
+Adapt View Function so The webpage doesn't shit itself with: &nbsp; (see: errorgenerated1.png)
+    Implement Stylesheet: Already Partially developed. Should help us with page layout and possible return errors. Also allows us to make our page look pretty!
+
+Datageneration in pools all my matches is broken by default. Returns errors with the final section if not using the placeholder. :( 
+    How To Look through and identify errors with this: remove the getAll() call in index.html and check array structure
+
+    FOUND: thePool.allMyMatches.push(newMatch) was being called during getAll(). This only implements it in the final call. Leaves data unusable by other functions.
+    Fix: moved thePool.allMyMatches.push(newMatch) to addMatch() in Sport so that it is pushed to the corresponding pools matches at the same time.
+
+Commenting Existing Code:
+    Very poor communication and documentation of code. Will add documentation and commenting to all the code for further readability.
