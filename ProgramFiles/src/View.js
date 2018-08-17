@@ -27,19 +27,7 @@ class View {// eslint-disable-line no-unused-vars
   static NEWLINE () {
     return '<br>'
   }
-  // clear the body. this is now redundant. considering removal
-  static clr () {
-    document.body.style.fontFamily = 'Courier New'
-    document.body.innerHTML = ''
-  }
-  // pushes text out. this is now redundant. considering removal
-  static out (newText) {
-    document.body.innerHTML += newText
-  }
-  // adds text on a . this is now redundant. considering removal
-  static add (newText) {
-    document.body.innerHTML += '<br>' + newText
-  }
+
   // centres target value in a space tabular form
   static centre (original, targetSize = 8) {
     let result = original
