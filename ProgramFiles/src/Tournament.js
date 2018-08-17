@@ -174,7 +174,7 @@ class Tournament {// eslint-disable-line no-unused-vars
 
     // apply our base theme
     let aTheme = allMyThemes.find(aTheme => (aTheme.Country === 'scotland'))
-    aTheme.turnThisShitrad()
+    aTheme.turnThisWPRad()
   }
 
   // finds a target sport in allmysports.
