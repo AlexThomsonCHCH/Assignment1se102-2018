@@ -5,6 +5,7 @@
   <title>BCSE101 18S1 Programming Assignment 1</title>
 
   <!-- include source files here... -->
+  <script src="Styling/dynamicStyling.js"></script>
   <script src="src/SetExtensions.js"></script>
   <script src="src/View.js"></script>
   <script src="src/Team.js"></script>
@@ -16,31 +17,45 @@
   <script src="src/addPoolResults.js"></script>
   <script src="src/shortNames.js"></script>
   <link rel="stylesheet" href="Styling/stylesheet.css">
+  
 </head>
           
-<body>
-  <header>
+<body id="body">
+
+  <header class="dynamicColoured">
+
     <!--Create a set of divs for the two seperate sections of the header (title and style selections) -->
+
     <div id="page-title">
       <img src='styling/images/logo.png' id="logo">
       <h1>The 2018 Commonwealth Games</h1>
     </div>
+
     <div id="imageSelector">
-      <!--This Is Planned to have a button for a Style Selection based on Flag. (Bg, colours etc.)-->
-      <!--<label for="image">Choose Your Team:</label>
-      <select id="image"> 
-        
-        <option value="images/firefoxos.png" selected="">Firefox</option>
-        <option value="images/crocodile.png">Crocodile</option>
-        <opt>ion value="images/tortoise.png">Tortoise</option>
-      </select>-->
+        <!--This Area Is Reserved for Styling - Will be added in Iteration 3 (It2)-->
+        <form name="form2">
+          <select name="jumpmenu" id="TeamSelector" onChange=themechange()>
+            <option selected disabled>Change Team:</option>
+            <option value="australia">Australia</option>
+            <option value="jamaica">Jamaica</option>
+            <option value="scotland">Scotland</option>
+            <option value="england">England</option>
+            
+          </select>
+        </form>
+      
     </div>
+
   </header>
 
-  <main>
-    <!--The Div where Information is displayed is placed here to allow for output-->
+  <main id='main'>
+    <!--The Div where Information from CG2018 is displayed is placed here to allow for output-->
     <div id="divDisplay"></div>
   </main>
+
+  <footer class='dynamicColoured'>
+    <p class="blurb">&copy; Copyright Alex Thomson 2018</p>
+  </footer>
 
   <script>
     //This area is where the script for dynamic content and tournament is run.
@@ -52,8 +67,7 @@
       addShortNames(the2018Games) // NEW LINE FOR ASSIGNMENT 2
       theDisplay.body = the2018Games.getAll()
       console.log( the2018Games ) 
-    }
-
+     }
     window.onload = go;
 
     //assign global variables for some Child Divs in order to display correctly
@@ -65,18 +79,22 @@
     //Div for all matches
     var matchResultsDiv = document.createElement('div')
     matchResultsDiv.id = 'matchResultsDiv'
-    matchResultsDiv.className = "resultsDiv"
+    matchResultsDiv.className = "resultsDiv dynamicColoured"
 
     //Div for all Team Results
     var teamResultsDiv = document.createElement('div')
     teamResultsDiv.id = 'teamResultsDiv'
-    teamResultsDiv.className = "resultsDiv"
+    teamResultsDiv.className = "resultsDiv dynamicColoured"
 
     //Div for all results table
     var resultsDiv = document.createElement('div')
     resultsDiv.id = 'resultsDiv'
-    resultsDiv.className = "resultsDiv"
+    resultsDiv.className = "resultsDiv dynamicColoured"
 
+    //Div for Blurb
+    var blurbDiv = document.createElement('div')
+    blurbDiv.id = 'blurbDiv'
+    blurbDiv.className = "resultsDiv"
   </script> 
 
 </body>
