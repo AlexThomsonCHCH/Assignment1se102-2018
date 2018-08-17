@@ -14,31 +14,31 @@ class Team {// eslint-disable-line no-unused-vars
     this.scoreAgainst = 0
     this.poolRank = 0
   }
-  //add a win to wincounter
+  // add a win to wincounter
   incWin () {
     this.matchesWon += 1
   }
-  //add a lose to losecounter
+  // add a lose to losecounter
   incLoss () {
     this.matchesLost += 1
   }
-  //add a match to matchcounter
+  // add a match to matchcounter
   incPlayed () {
     this.matchesPlayed += 1
   }
-  //add score from a match to the total points scored for
+  // add score from a match to the total points scored for
   incScoreFor (newScoreFor) {
     this.scoreFor += newScoreFor
   }
-  //add score from a match to the total points scored against
+  // add score from a match to the total points scored against
   incScoreAgainst (newScoreAgainst) {
     this.scoreAgainst += newScoreAgainst
   }
-  //return information in a string format
+  // return information in a string format
   toString () {
     return this.name
   }
-  //return results as a table.
+  // return results as a table.
   getResults () {
     let result = ''
     result += View.padRight(this.matchesPlayed)

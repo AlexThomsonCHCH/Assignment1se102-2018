@@ -3,15 +3,15 @@
 // Done: 15/08/17
 // Page Commented by DEV: Alex T 17/08/2018
 class View {// eslint-disable-line no-unused-vars
-  //return nothing
+  // return nothing
   static BLANK () {
     return ''
   }
-  //return a single space. A source of &nbsp; diarrhea.  Fixed 15/08/17
+  // return a single space. A source of &nbsp; diarrhea.  Fixed 15/08/17
   static SPACE () {
     return ' '
   }
-  //return multiple spaces. Automatically fixed due to call of SPACE()
+  // return multiple spaces. Automatically fixed due to call of SPACE()
   static SPACES (n) {
     let result = ''
     for (let i = 0; i < n; i += 1) {
@@ -19,28 +19,28 @@ class View {// eslint-disable-line no-unused-vars
     }
     return result
   }
-  //return 4 spaces. A source of &nbsp; diarrhea. Fixed 15/08/17  
+  // return 4 spaces. A source of &nbsp; diarrhea. Fixed 15/08/17
   static TAB () {
     return '    '
   }
-  //break the line. Be Careful where you call this, ass html will sometimes return it as a string.
+  // break the line. Be Careful where you call this, ass html will sometimes return it as a string.
   static NEWLINE () {
     return '<br>'
   }
-  //clear the body. this is now redundant. considering removal
+  // clear the body. this is now redundant. considering removal
   static clr () {
     document.body.style.fontFamily = 'Courier New'
     document.body.innerHTML = ''
   }
-  //pushes text out. this is now redundant. considering removal
+  // pushes text out. this is now redundant. considering removal
   static out (newText) {
     document.body.innerHTML += newText
   }
-  //adds text on a . this is now redundant. considering removal
+  // adds text on a . this is now redundant. considering removal
   static add (newText) {
     document.body.innerHTML += '<br>' + newText
   }
-  //centres target value in a space tabular form
+  // centres target value in a space tabular form
   static centre (original, targetSize = 8) {
     let result = original
     let size = result.length
@@ -54,7 +54,7 @@ class View {// eslint-disable-line no-unused-vars
     }
     return result
   }
-  //Allows Tabular spaces to be applied evenly through monospace. A source of &nbsp; diarrhea.  Fixed 15/08/17
+  // Allows Tabular spaces to be applied evenly through monospace. A source of &nbsp; diarrhea.  Fixed 15/08/17
   static padRight (original, targetSize = 16) {
     let result = '' + original
     let size = result.length

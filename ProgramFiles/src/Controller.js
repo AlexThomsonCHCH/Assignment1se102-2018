@@ -94,7 +94,7 @@ class Controller {// eslint-disable-line no-unused-vars
     aSport.addMatch(2018, APRIL, 14, 18, 30, 'B', 'England', 'Wales')
     aSport.addMatch(2018, APRIL, 14, 18, 30, 'B', 'Australia', 'Fiji')
 
-    //passes the Data Back to the main script
+    // passes the Data Back to the main script
     return the2018Games
   }
 }

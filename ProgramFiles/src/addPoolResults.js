@@ -3,7 +3,7 @@
 // Page Commented by DEV: Alex T 16/08/2018
 
 var addPoolResults = function (theTournament) { // eslint-disable-line no-unused-vars
-  //NetBall
+  // NetBall
   let aSport = theTournament.findSport('Netball')
   aSport.addPoolResult('Australia', 'Jamaica', 72, 51)
   aSport.addPoolResult('Australia', 'South Africa', 60, 38)
@@ -36,7 +36,7 @@ var addPoolResults = function (theTournament) { // eslint-disable-line no-unused
   aSport.addPoolResult('Malawi', 'Wales', 68, 53)
   aSport.addPoolResult('Scotland', 'Wales', 51, 47)
 
-  //Men's Rugby Sevens
+  // Men's Rugby Sevens
   aSport = theTournament.findSport('Men\'s Rugby Sevens')
   aSport.addPoolResult('Australia', 'Samoa', 24, 7)
   aSport.addPoolResult('England', 'Jamaica', 38, 5)
@@ -63,7 +63,7 @@ var addPoolResults = function (theTournament) { // eslint-disable-line no-unused
   aSport.addPoolResult('Papua New Guinea', 'Malaysia', 31, 5)
   aSport.addPoolResult('South Africa', 'Scotland', 26, 5)
 
-  //womens rugby sevens
+  // womens rugby sevens
   aSport = theTournament.findSport('Women\'s Rugby Sevens')
   aSport.addPoolResult('Canada', 'South Africa', 29, 0)
   aSport.addPoolResult('New Zealand', 'Kenya', 45, 0)

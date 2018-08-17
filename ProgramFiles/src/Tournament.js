@@ -10,19 +10,19 @@ class Tournament {// eslint-disable-line no-unused-vars
     this.allMySports = []
   }
 
-  //return class information as a string
+  // return class information as a string
   toString () {
     return this.name
   }
 
-  //add a sport to the tournament
+  // add a sport to the tournament
   addSport (newName, newVenue) {
     let newSport = new Sport(newName, newVenue)
     this.allMySports.push(newSport)
     return newSport
   }
 
-  //return sports as a string list
+  // return sports as a string list
   getSports () {
     let result = ''
     for (let aSport of this.allMySports) {
@@ -31,7 +31,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     return result
   }
 
-  //return all teams of a sport 
+  // return all teams of a sport
   getTeams () {
     let result = ''
     for (let aSport of this.allMySports) {
@@ -39,7 +39,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     }
     return result
   }
-  //return all pools of a sport in string form
+  // return all pools of a sport in string form
   getPools () {
     let result = ''
     for (let aSport of this.allMySports) {
@@ -47,7 +47,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     }
     return result
   }
-  //return all matches of a sport in string form
+  // return all matches of a sport in string form
   getMatches () {
     let result = ''
     for (let aSport of this.allMySports) {
@@ -55,7 +55,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     }
     return result
   }
-  //return all matches of a sport that have nz as a team in string form
+  // return all matches of a sport that have nz as a team in string form
   getNZMatches () {
     let result = ''
     for (let aSport of this.allMySports) {
@@ -64,7 +64,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     return result
   }
 
-  //Finds all teams participating in all 3 sports
+  // Finds all teams participating in all 3 sports
   getParticipation () {
     let netballSet = new Set()
     for (let aTeam of this.allMySports[0].allMyTeams) {
@@ -81,7 +81,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     var all3Set = netballSet.intersection(mens7sSet) // eslint-disable-line no-unused-vars
     all3Set = all3Set.intersection(womens7sSet)
   }
-  //returns table of all results for that sport
+  // returns table of all results for that sport
   getResults () {
     let result = ''
     for (let aSport of this.allMySports) {
@@ -89,13 +89,13 @@ class Tournament {// eslint-disable-line no-unused-vars
     }
     return result
   }
-  //returns match results of the sport
+  // returns match results of the sport
   getMatchResults () {
     for (let aSport of this.allMySports) {
       aSport.getMatchResults()
     }
   }
-  //returns info of a team in a sport including wins, losses etc
+  // returns info of a team in a sport including wins, losses etc
   getTeamResults () {
     let result = ''
     for (let aSport of this.allMySports) {
@@ -104,20 +104,20 @@ class Tournament {// eslint-disable-line no-unused-vars
     return result
   }
 
-  //This is Just a styling element. Blurb in top right. (This was developed for Iteration3, But added alongside IT2)
+  // This is Just a styling element. Blurb in top right. (This was developed for Iteration3, But added alongside IT2)
   getBlurb () {
-    //Create Vars and assign some classinfo for styling
+    // Create Vars and assign some classinfo for styling
     var getBlurbPara1 = document.createElement('p')
     var getBlurbPara2 = document.createElement('p')
     var getBlurbPara3 = document.createElement('p')
     getBlurbPara1.className = 'blurb'
     getBlurbPara2.className = 'blurb'
     getBlurbPara3.className = 'blurb'
-    //Insert Text into nodes
+    // Insert Text into nodes
     var getBlurbPara1Node = document.createTextNode('The Gold Coast 2018 Commonwealth Games (GC2018) Welcomed more than 6,600 athletes and team officials from 71 Commonwealth nations and territories to the Gold Coast and event cities Brisbane, Cairns and Townsville, to share in the celebration of sport, entertainment and culture.')
     var getBlurbPara2Node = document.createTextNode('This was the largest sporting event staged in Australia this decade, and featured the largest integrated sports program in Commonwealth Games history, comprising 18 sports and seven para-sports.')
     var getBlurbPara3Node = document.createTextNode("This Website documents some results from GC2018 including Netball, Men's Rugby Sevens and Women's Rugby Sevens.")
-    //append to parents
+    // append to parents
     getBlurbPara1.appendChild(getBlurbPara1Node)
     getBlurbPara2.appendChild(getBlurbPara2Node)
     getBlurbPara3.appendChild(getBlurbPara3Node)
@@ -128,12 +128,12 @@ class Tournament {// eslint-disable-line no-unused-vars
     // create Seperator
     var seperator = document.createElement('div')
     seperator.className = 'line-seperator'
-    //append all to parent div
+    // append all to parent div
     teamResultsDiv.appendChild(blurbDiv)
     teamResultsDiv.appendChild(seperator)
   }
 
-  //returns everything to the page
+  // returns everything to the page
   getAll () {
     // create structure for match results
     var head2_1 = document.createElement('h2')
@@ -177,7 +177,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     aTheme.turnThisShitrad()
   }
 
-  //finds a target sport in allmysports.
+  // finds a target sport in allmysports.
   findSport (targetName) {
     return this.allMySports.find(aSport => aSport.name === targetName)
   }
