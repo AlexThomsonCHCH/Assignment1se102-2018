@@ -1,3 +1,7 @@
+// This Page was added in SE101 Assignment 2 To add all the matches and initiate the tournament details.
+// TODO: Move these into a CSV FILE in order to reduce code amount in this Section
+// Page Commented by DEV: Alex T 16/08/2018
+
 /* global Tournament */
 class Controller {// eslint-disable-line no-unused-vars
   static setup () {
@@ -90,6 +94,7 @@ class Controller {// eslint-disable-line no-unused-vars
     aSport.addMatch(2018, APRIL, 14, 18, 30, 'B', 'England', 'Wales')
     aSport.addMatch(2018, APRIL, 14, 18, 30, 'B', 'Australia', 'Fiji')
 
+    // passes the Data Back to the main script
     return the2018Games
   }
 }
