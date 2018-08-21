@@ -90,7 +90,6 @@ h1 {
     justify-content: flex-start;
     padding-left: 1cm;
     padding-right: 1cm;
-    flex-grow: 1;
     padding: 0.3cm; 
     margin: 0.3cm;
 }
@@ -121,11 +120,12 @@ h1 {
 }
 
 #matchResultsDiv {
-    width: 23em;
+    flex-basis: 13%;
 }
 
 #teamResultsDiv {
-    width: 46em;
+    flex-basis: 61%;
+    flex-grow: 1;
 }
 
 #page-title {
