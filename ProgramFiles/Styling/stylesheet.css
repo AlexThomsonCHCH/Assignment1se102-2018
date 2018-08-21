@@ -1,0 +1,173 @@
+/*This Page was added in SE1022 Assignment 1 for the styling of webpage. Typography and padding styling elements can be found here.
+// TODO: Nothing as of Page Commented
+// Page Commented by DEV: Alex T 17/08/2018
+*/
+/*=================== Typography ================*/
+
+h1, h2, h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+h1 {
+    text-align: left;
+    font-size: 3rem;
+}
+
+h2, h3 { 
+    text-align: center;
+}
+
+
+main{
+    align-items: center;
+}
+
+.resultsDiv{
+    white-space:  pre-wrap;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sportDiv h3 {
+    font-size: 1.1rem;
+}
+
+.sportDiv {
+    font-size: 0.9rem;
+    margin: 0cm;
+    white-space: pre;
+    font-family: monospace;
+}
+
+#teamResultsDiv p{
+    font-size: 0.7rem;
+}
+
+#resultsDiv p {
+    font-size: 0.85rem}
+
+#blurbDiv{
+    margin: 0cm;
+    padding-top: 0cm;
+}
+
+.line-seperator {
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+    margin-right: 1cm;
+    margin-left: 1cm;
+    height:5px;
+    background:#ffffff;
+}
+
+#blurbDiv p{
+    font-size: 1rem;
+    font-style: italic;
+    margin-left: 0.5cm;
+    margin-right: 0.5cm; 
+}
+
+footer{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+}
+
+/*======================= Colors & Background ========================== */
+
+.sportDiv {
+    font-kerning: none;
+    letter-spacing: 0px;
+    background-color:rgba(255, 255, 255, 1);
+}
+
+/* =============== padding & layout ============== */
+h1 {
+    margin-left: 1cm
+}
+
+.resultsDiv{
+    justify-content: flex-start;
+    padding-left: 1cm;
+    padding-right: 1cm;
+    flex-grow: 1;
+    padding: 0.3cm; 
+    margin: 0.3cm;
+}
+
+#imageSelector{
+    padding-left: 1cm;
+    align-items: center;
+    margin: 1rem
+}
+
+#TeamSelector{
+    width: 10rem;
+    height: 4rem;
+    font-size: 1rem;
+    text-align: center;
+    padding-left: 1rem;
+}
+#logo {
+    width: 75px;
+    height: 100px;
+    padding-left: 4mm;
+    padding-right: 4mm;
+}
+#allreturn {
+    display: flex;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+
+#matchResultsDiv {
+    width: 23em;
+}
+
+#teamResultsDiv {
+    width: 46em;
+}
+
+#page-title {
+    display: flex;
+    align-content: stretch; 
+    justify-content: flex-start
+}
+
+header{
+    align-content: center;
+    display: flex;
+    padding-top: 0.5cm;
+    padding-bottom: 0.5cm;
+}
+
+footer {
+    padding:0.5cm;
+}
+
+body {
+    padding-right: 1.5cm;
+    padding-left: 1.5cm;
+}
+
+main{
+    padding-right: 0.1cm;
+    padding-left: 0.1cm;
+    padding-bottom: 0.25cm;
+    padding-top: 0.25cm;
+}
+
+.sportDiv {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+    margin:2em;
+    padding:1em;
+    
+}
+
+.sportDiv h3 {
+    width: 100%
+}
