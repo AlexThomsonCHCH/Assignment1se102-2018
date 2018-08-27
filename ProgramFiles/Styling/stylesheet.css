@@ -108,7 +108,8 @@ h1 {
     padding-left: 1rem;
 }
 #logo {
-    max-height: 100%;
+    width: 75px;
+    height: 100px;
     padding-left: 4mm;
     padding-right: 4mm;
 }
@@ -134,7 +135,6 @@ h1 {
 }
 
 header{
-    height: 12em;
     align-content: center;
     display: flex;
     padding-top: 0.5cm;
