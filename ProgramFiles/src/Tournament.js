@@ -2,7 +2,7 @@
 // TODO: Nothing as of Page Commented
 // Page Commented by DEV: Alex T 17/08/2018
 
-/* global Sport View matchResultsDiv teamResultsDiv resultsDiv allreturn */
+/* global Sport View matchResultsDiv teamResultsDiv resultsDiv blurbDiv allMyThemes allreturn */
 // eslint-disable no-unused-vars
 class Tournament {// eslint-disable-line no-unused-vars
   constructor (newName) {
@@ -173,7 +173,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     theDisplay.appendChild(allreturn)
 
     // apply our base theme
-    let aTheme = allMyThemes.find(aTheme => (aTheme.Country === 'scotland'))
+    let aTheme = allMyThemes.find(aTheme => (aTheme.Country === 'australia'))
     aTheme.turnThisWPRad()
   }
 
