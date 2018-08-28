@@ -2,7 +2,7 @@
 // TODO: Nothing as of Page Commented
 // Page Commented by DEV: Alex T 19/08/2018
 
-//lets create a list to store all our themes themes
+// lets create a list to store all our themes themes
 var allMyThemes = []
 
 // create a class to easily change theme and styling of webpage.

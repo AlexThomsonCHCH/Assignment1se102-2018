@@ -74,5 +74,5 @@ class Pool {// eslint-disable-line no-unused-vars
     return this.allMyMatches.find(aMatch => ((aMatch.myTeamA === teamA && aMatch.myTeamB === teamB) || (aMatch.myTeamB === teamA && aMatch.myTeamA === teamB)))
   }
 
-  //Deprecated Function getResults() Removed 28/08/18 AT. For New Function See sport.getResults()
+  // Deprecated Function getResults() Removed 28/08/18 AT. For New Function See sport.getResults()
 }

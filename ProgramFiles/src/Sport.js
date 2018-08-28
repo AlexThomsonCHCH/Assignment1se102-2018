@@ -2,6 +2,7 @@
 // TODO: Nothing as of Page Commented
 // Page Commented by DEV: Alex T 16/08/2018
 /* global Pool Team Match matchResultsDiv resultsDiv teamResultsDiv View */
+
 class Sport {// eslint-disable-line no-unused-vars
   constructor (newName, newVenue) {
     this.name = newName
@@ -153,8 +154,7 @@ class Sport {// eslint-disable-line no-unused-vars
     var getMatchHeadingNode = document.createTextNode(this.name)
     sportgetmatchdiv.appendChild(getMatchHeading)
     var theTable = makeTable(sportgetmatchdiv)
-    addTableHeaders(theTable, 'Pool','Team 1', 'Score', 'Team 2')
-
+    addTableHeaders(theTable, 'Pool', 'Team 1', 'Score', 'Team 2')
 
     // append match heading
     getMatchHeading.appendChild(getMatchHeadingNode)
@@ -166,7 +166,7 @@ class Sport {// eslint-disable-line no-unused-vars
       theTable.appendChild(theRow)
     }
     // append all these childs to parents heirarchy
-    
+
     matchResultsDiv.appendChild(sportgetmatchdiv)
   }
 
@@ -208,7 +208,7 @@ class Sport {// eslint-disable-line no-unused-vars
   }
 
   // Produce our tabulated Table in Formatted Html Elements
-  getResults () {
+  getResults () { // eslint-disable-line no-unused-vars
     // sort pools by name.
     this.sortPools()
 
@@ -221,34 +221,33 @@ class Sport {// eslint-disable-line no-unused-vars
     getResultsHeading.appendChild(getResultsHeadingNode)
     sportresultsdiv.appendChild(getResultsHeading)
 
-    for (let aPool of this.allMyPools){
-      //sort Teams
+    for (let aPool of this.allMyPools) {
+      // sort Teams
       aPool.sortTeams()
-      
+
       var theTable = makeTable(sportresultsdiv)
       var newTableHeaderRow = document.createElement('tr')
       theTable.appendChild(newTableHeaderRow)
-      addSecondaryHeaders (newTableHeaderRow, 'POOL '+ aPool.name)
+      addSecondaryHeaders(newTableHeaderRow, 'POOL ' + aPool.name)
       for (let aTeam of aPool.allMyTeams) {
         addSecondaryHeaders(newTableHeaderRow, aTeam.shortName)
         let TeamNameForTop = aTeam
-        var newTeamResultsRow= document.createElement('tr')
-        addSecondaryData (newTeamResultsRow, aTeam.shortName)
-        for (let aTeamforSide of aPool.allMyTeams){
-          //stop values being returned for same team
+        var newTeamResultsRow = document.createElement('tr')
+        addSecondaryData(newTeamResultsRow, aTeam.shortName)
+        for (let aTeamforSide of aPool.allMyTeams) {
+          // stop values being returned for same team
           if (TeamNameForTop.shortName === aTeamforSide.shortName) {
             addSecondaryData(newTeamResultsRow, 'xxxxxxxx')
             theTable.appendChild(newTeamResultsRow)
-          }
-          else{
-          let theMatch = this.findMatch(TeamNameForTop, aTeamforSide)
-          let leftScore = theMatch.findScore(TeamNameForTop.name)
-          let rightScore = theMatch.findScore(aTeamforSide.name)
-          addSecondaryData(newTeamResultsRow, leftScore + ' - ' + rightScore)
+          } else {
+            let theMatch = this.findMatch(TeamNameForTop, aTeamforSide)
+            let leftScore = theMatch.findScore(TeamNameForTop.name)
+            let rightScore = theMatch.findScore(aTeamforSide.name)
+            addSecondaryData(newTeamResultsRow, leftScore + ' - ' + rightScore)
           }
         }
-        addSecondaryData(newTeamResultsRow, aTeam.matchesPlayed, aTeam.matchesWon, aTeam.matchesLost, aTeam.matchesDrawn, aTeam.scoreFor, aTeam.scoreAgainst)
-        theTable.appendChild(newTeamResultsRow)
+      addSecondaryData(newTeamResultsRow, aTeam.matchesPlayed, aTeam.matchesWon, aTeam.matchesLost, aTeam.matchesDrawn, aTeam.scoreFor, aTeam.scoreAgainst)
+      theTable.appendChild(newTeamResultsRow)
       }
       addSecondaryHeaders(newTableHeaderRow, 'Matches Played', 'Matches Won', 'Matches Lost', 'Matches Drawn', 'Points For', 'Points Against')
     }
@@ -270,11 +269,11 @@ class Sport {// eslint-disable-line no-unused-vars
     // append to parents
     sportgetteamsdiv.appendChild(getTeamResultsHeading)
 
-    //add table headers
+    // add table headers
     var theTable = makeTable(sportgetteamsdiv)
     addTableHeaders(theTable, 'Team', 'Matches Played', 'Matches Won', 'Matches Lost', 'Matches Drawn', 'Points For', 'Points Against')
 
-    //append node
+    // append node
     getTeamResultsHeading.appendChild(getTeamResultsHeadingNode)
 
     // append table Data
