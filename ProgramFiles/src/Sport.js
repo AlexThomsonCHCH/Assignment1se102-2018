@@ -149,24 +149,24 @@ class Sport {// eslint-disable-line no-unused-vars
     sportgetmatchdiv.className = 'sportDiv'
 
     // declare some vars for dynamic html generation
-    var getMatchPara = document.createElement('p')
     var getMatchHeading = document.createElement('h3')
     var getMatchHeadingNode = document.createTextNode(this.name)
+    sportgetmatchdiv.appendChild(getMatchHeading)
+    var theTable = makeTable(sportgetmatchdiv)
+    addTableHeaders(theTable, 'Pool','Team 1', 'Score', 'Team 2')
+
 
     // append match heading
     getMatchHeading.appendChild(getMatchHeadingNode)
 
     // loop a return of all matches for dynamic html paragraph
     for (let aMatch of this.allMyMatches) {
-      let result = ''
-      result += aMatch
-      var paranode = document.createTextNode(result + '\n')
-      // add text to paragraph
-      getMatchPara.appendChild(paranode)
+      var theRow = document.createElement('tr')
+      addTableData(theRow, aMatch.myPool, aMatch.myTeamA, aMatch.scoreA + ' - ' + aMatch.scoreB, aMatch.myTeamB)
+      theTable.appendChild(theRow)
     }
     // append all these childs to parents heirarchy
-    sportgetmatchdiv.appendChild(getMatchHeading)
-    sportgetmatchdiv.appendChild(getMatchPara)
+    
     matchResultsDiv.appendChild(sportgetmatchdiv)
   }
 
@@ -215,23 +215,54 @@ class Sport {// eslint-disable-line no-unused-vars
     // Declare some vars
     var sportresultsdiv = document.createElement('div')
     sportresultsdiv.className = 'sportDiv'
-    var getResultsPara = document.createElement('p')
     var getResultsHeading = document.createElement('h3')
     var getResultsHeadingNode = document.createTextNode(this.name)
     // append to parents
     getResultsHeading.appendChild(getResultsHeadingNode)
     sportresultsdiv.appendChild(getResultsHeading)
 
+    for (let aPool of this.allMyPools){
+      //sort Teams
+      aPool.sortTeams()
+      
+      var theTable = makeTable(sportresultsdiv)
+      var newTableHeaderRow = document.createElement('tr')
+      theTable.appendChild(newTableHeaderRow)
+      addSecondaryHeaders (newTableHeaderRow, 'POOL '+ aPool.name)
+      for (let aTeam of aPool.allMyTeams) {
+        addSecondaryHeaders(newTableHeaderRow, aTeam.shortName)
+        let TeamNameForTop = aTeam
+        var newTeamResultsRow= document.createElement('tr')
+        addSecondaryData (newTeamResultsRow, aTeam.shortName)
+        for (let aTeamforSide of aPool.allMyTeams){
+          //stop values being returned for same team
+          if (TeamNameForTop.shortName === aTeamforSide.shortName) {
+            addSecondaryData(newTeamResultsRow, 'xxxxxxxx')
+            theTable.appendChild(newTeamResultsRow)
+          }
+          else{
+          let theMatch = this.findMatch(TeamNameForTop, aTeamforSide)
+          let leftScore = theMatch.findScore(TeamNameForTop.name)
+          let rightScore = theMatch.findScore(aTeamforSide.name)
+          addSecondaryData(newTeamResultsRow, leftScore + ' - ' + rightScore)
+          
+          }
+        }
+        addSecondaryData(newTeamResultsRow, aTeam.matchesPlayed, aTeam.matchesWon, aTeam.matchesLost, aTeam.matchesDrawn, aTeam.scoreFor, aTeam.scoreAgainst)
+        theTable.appendChild(newTeamResultsRow)
+      }
+      addSecondaryHeaders(newTableHeaderRow, 'Matches Played', 'Matches Won', 'Matches Lost', 'Matches Drawn', 'Points For', 'Points Against')
+    }
+
+
     // return results as a p for all pools
     for (let aPool of this.allMyPools) {
       let result = ''
       result += aPool.getResults()
       var paranode = document.createTextNode(result + '\n')
-      getResultsPara.appendChild(paranode)
+
     }
     // append to parent elements
-    sportresultsdiv.appendChild(getResultsHeading)
-    sportresultsdiv.appendChild(getResultsPara)
     resultsDiv.appendChild(sportresultsdiv)
   }
 
@@ -242,23 +273,26 @@ class Sport {// eslint-disable-line no-unused-vars
     // Declare some vars
     var sportgetteamsdiv = document.createElement('div')
     sportgetteamsdiv.className = 'sportDiv'
-    var getTeamResultsPara = document.createElement('p')
+
     var getTeamResultsHeading = document.createElement('h3')
     var getTeamResultsHeadingNode = document.createTextNode(this.name)
     // append to parents
-    getTeamResultsHeading.appendChild(getTeamResultsHeadingNode)
     sportgetteamsdiv.appendChild(getTeamResultsHeading)
+
+    //add table headers
+    var theTable = makeTable(sportgetteamsdiv)
+    addTableHeaders(theTable, 'Team', 'Matches Played', 'Matches Won', 'Matches Lost', 'Matches Drawn', 'Points For', 'Points Against')
+
+    //append node
+    getTeamResultsHeading.appendChild(getTeamResultsHeadingNode)
 
     // return results as a p for all teams
     for (let aTeam of this.allMyTeams) {
-      let result = View.padRight(aTeam) + ' '
-      result += aTeam.getResults()
-      var paranode = document.createTextNode(result + '\n')
-      getTeamResultsPara.appendChild(paranode)
+      var theRow = document.createElement('tr')
+      addTableData(theRow, aTeam.name, aTeam.matchesPlayed, aTeam.matchesWon, aTeam.matchesLost, aTeam.matchesDrawn, aTeam.scoreFor, aTeam.scoreAgainst)
+      theTable.appendChild(theRow)
     }
     // append to parent elements
-    sportgetteamsdiv.appendChild(getTeamResultsHeading)
-    sportgetteamsdiv.appendChild(getTeamResultsPara)
     teamResultsDiv.appendChild(sportgetteamsdiv)
   }
 }
