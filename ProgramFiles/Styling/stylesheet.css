@@ -81,7 +81,18 @@ footer{
     background-color:rgba(255, 255, 255, 1);
 }
 
+
 /* =============== padding & layout ============== */
+
+table {
+    margin-bottom: 1em ;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: center;
+    padding: 5px;
+}
 h1 {
     margin-left: 1cm
 }
@@ -112,19 +123,27 @@ h1 {
     padding-left: 4mm;
     padding-right: 4mm;
 }
+
+#divDisplay {
+    display: grid
+}
 #allreturn {
-    display: flex;
-    align-content: stretch;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto
 }
 
 #matchResultsDiv {
-    flex-basis: 13%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
-#teamResultsDiv {
-    flex-basis: 61%;
-    flex-grow: 1;
+#resultsDiv {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
 }
 
 #page-title {
@@ -146,8 +165,8 @@ footer {
 }
 
 body {
-    padding-right: 1.5cm;
-    padding-left: 1.5cm;
+    padding-right: 1cm;
+    padding-left: 1cm;
 }
 
 main{
@@ -165,7 +184,6 @@ main{
     flex-grow: 0;
     margin:2em;
     padding:1em;
-    
 }
 
 .sportDiv h3 {

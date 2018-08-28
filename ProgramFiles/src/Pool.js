@@ -74,17 +74,15 @@ class Pool {// eslint-disable-line no-unused-vars
     return this.allMyMatches.find(aMatch => ((aMatch.myTeamA === teamA && aMatch.myTeamB === teamB) || (aMatch.myTeamB === teamA && aMatch.myTeamA === teamB)))
   }
 
-  getResults () {
+  //Deprecated Function getResults() Removed 28/08/18 AT. For New Function See sport.getResults()
+  /*getResults () {
     // sort teams
     this.sortTeamsByRank()
 
-    // def variables
-    let result = ''
-    let topLine = View.SPACES(6)
-    // get short team names and list them along for tabular
     for (let aTeamForTopLine of this.allMyTeams) {
+      var result =''
+      var topLine = ''
       let topName = aTeamForTopLine.shortName
-      topLine += View.centre(topName, 7)
       let sideName = aTeamForTopLine.shortName
       result += sideName + View.SPACES(2)
       for (let aTeamForSide of this.allMyTeams) {
@@ -113,4 +111,5 @@ class Pool {// eslint-disable-line no-unused-vars
     result = topLine + '\n' + result + '\n'
     return result
   }
+  */
 }

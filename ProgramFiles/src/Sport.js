@@ -258,7 +258,7 @@ class Sport {// eslint-disable-line no-unused-vars
     // return results as a p for all pools
     for (let aPool of this.allMyPools) {
       let result = ''
-      result += aPool.getResults()
+      //result += aPool.getResults()
       var paranode = document.createTextNode(result + '\n')
 
     }
