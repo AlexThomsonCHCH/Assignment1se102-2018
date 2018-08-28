@@ -245,7 +245,6 @@ class Sport {// eslint-disable-line no-unused-vars
           let leftScore = theMatch.findScore(TeamNameForTop.name)
           let rightScore = theMatch.findScore(aTeamforSide.name)
           addSecondaryData(newTeamResultsRow, leftScore + ' - ' + rightScore)
-          
           }
         }
         addSecondaryData(newTeamResultsRow, aTeam.matchesPlayed, aTeam.matchesWon, aTeam.matchesLost, aTeam.matchesDrawn, aTeam.scoreFor, aTeam.scoreAgainst)
@@ -253,15 +252,7 @@ class Sport {// eslint-disable-line no-unused-vars
       }
       addSecondaryHeaders(newTableHeaderRow, 'Matches Played', 'Matches Won', 'Matches Lost', 'Matches Drawn', 'Points For', 'Points Against')
     }
-
-
-    // return results as a p for all pools
-    for (let aPool of this.allMyPools) {
-      let result = ''
-      //result += aPool.getResults()
-      var paranode = document.createTextNode(result + '\n')
-
-    }
+    // Deprecated Code Removed 28/08/18
     // append to parent elements
     resultsDiv.appendChild(sportresultsdiv)
   }
@@ -286,7 +277,7 @@ class Sport {// eslint-disable-line no-unused-vars
     //append node
     getTeamResultsHeading.appendChild(getTeamResultsHeadingNode)
 
-    // return results as a p for all teams
+    // append table Data
     for (let aTeam of this.allMyTeams) {
       var theRow = document.createElement('tr')
       addTableData(theRow, aTeam.name, aTeam.matchesPlayed, aTeam.matchesWon, aTeam.matchesLost, aTeam.matchesDrawn, aTeam.scoreFor, aTeam.scoreAgainst)
