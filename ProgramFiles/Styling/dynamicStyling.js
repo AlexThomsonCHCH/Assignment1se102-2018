@@ -68,6 +68,13 @@ class CountryStyle {// eslint-disable-line no-unused-vars
     for (var t = 0; t < table.length; t++) {
       table[t].style.borderColor = this.Background
     }
+
+    var tableheaderColour = document.querySelectorAll('th')
+    for (var e = 0; e < tableheaderColour.length; e++) {
+      tableheaderColour[e].style.color = this.Foreground
+      tableheaderColour[e].style.backgroundColor = this.Background
+    }
+
     // styling our drop down menu now.
     ddmenu.style.color = this.Background
     ddmenu.style.backgroundColor = this.Foreground

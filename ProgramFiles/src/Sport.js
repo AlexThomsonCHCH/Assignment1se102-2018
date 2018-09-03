@@ -1,7 +1,7 @@
 // This Page was added in SE101 Assignment 2 for the Sport Class.
 // TODO: Nothing as of Page Commented
 // Page Commented by DEV: Alex T 16/08/2018
-/* global Pool Team Match matchResultsDiv resultsDiv teamResultsDiv View */
+/* global Pool Team Match matchResultsDiv resultsDiv teamResultsDiv View addTableData makeTable addTableHeaders addSecondaryHeaders */
 
 class Sport {// eslint-disable-line no-unused-vars
   constructor (newName, newVenue) {

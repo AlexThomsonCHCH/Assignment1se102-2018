@@ -2,7 +2,7 @@
 // TODO: Nothing as of Page Commented
 // Page Commented by DEV: Alex T 17/08/2018
 
-/* global Sport View matchResultsDiv teamResultsDiv resultsDiv blurbDiv allMyThemes allreturn */
+/* global Sport View matchResultsDiv teamResultsDiv blurbParentDiv resultsDiv blurbDiv allMyThemes allreturn */
 // eslint-disable no-unused-vars
 class Tournament {// eslint-disable-line no-unused-vars
   constructor (newName) {
@@ -114,7 +114,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     getBlurbPara2.className = 'blurb'
     getBlurbPara3.className = 'blurb'
     // Insert Text into nodes
-    var getBlurbPara1Node = document.createTextNode('The Gold Coast 2018 Commonwealth Games (GC2018) Welcomed more than 6,600 athletes and team officials from 71 Commonwealth nations and territories to the Gold Coast and event cities Brisbane, Cairns and Townsville, to share in the celebration of sport, entertainment and culture.')
+    var getBlurbPara1Node = document.createTextNode('The Gold Coast 2018 Commonwealth Games (GC2018) welcomed more than 6,600 athletes and team officials from 71 Commonwealth nations and territories to the Gold Coast and event cities Brisbane, Cairns and Townsville, to share in the celebration of sport, entertainment and culture.')
     var getBlurbPara2Node = document.createTextNode('This was the largest sporting event staged in Australia this decade, and featured the largest integrated sports program in Commonwealth Games history, comprising 18 sports and seven para-sports.')
     var getBlurbPara3Node = document.createTextNode("This Website documents some results from GC2018 including Netball, Men's Rugby Sevens and Women's Rugby Sevens.")
     // append to parents

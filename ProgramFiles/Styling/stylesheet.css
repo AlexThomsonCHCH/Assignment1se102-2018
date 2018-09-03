@@ -65,8 +65,8 @@ nav button {
 .line-seperator {
     margin-top: 1cm;
     margin-bottom: 1cm;
-    margin-right: 1cm;
-    margin-left: 1cm;
+    margin-right: 0.5cm;
+    margin-left: 0.5cm;
     height:5px;
     background:#ffffff;
 }
@@ -95,6 +95,10 @@ footer{
     background-color:rgba(255, 255, 255, 1);
 }
 
+tr:hover { 
+    background-color: lightgrey;
+}
+
 
 /* =============== padding & layout ============== */
 
@@ -107,6 +111,7 @@ th, td {
     text-align: center;
     padding: 5px;
 }
+
 
 .resultsDiv{
     justify-content: flex-start;
