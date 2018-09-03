@@ -225,29 +225,36 @@ class Sport {// eslint-disable-line no-unused-vars
       // sort Teams
       aPool.sortTeams()
 
+      // declare some variables and generate some dynamic elements.
       var theTable = makeTable(sportresultsdiv)
       var newTableHeaderRow = document.createElement('tr')
+
+      // append to parent
       theTable.appendChild(newTableHeaderRow)
+      // add headers to table
       addSecondaryHeaders(newTableHeaderRow, 'POOL ' + aPool.name)
+
       for (let aTeam of aPool.allMyTeams) {
+        // add every team in pool to header of table
         addSecondaryHeaders(newTableHeaderRow, aTeam.shortName)
+        // add conflict resolver
         let TeamNameForTop = aTeam
         var newTeamResultsRow = document.createElement('tr')
-        addSecondaryData(newTeamResultsRow, aTeam.shortName)
+        addTableData(newTeamResultsRow, aTeam.shortName)
         for (let aTeamforSide of aPool.allMyTeams) {
           // stop values being returned for same team
           if (TeamNameForTop.shortName === aTeamforSide.shortName) {
-            addSecondaryData(newTeamResultsRow, 'xxxxxxxx')
+            addTableData(newTeamResultsRow, 'xxxxxxxx')
             theTable.appendChild(newTeamResultsRow)
           } else {
             let theMatch = this.findMatch(TeamNameForTop, aTeamforSide)
             let leftScore = theMatch.findScore(TeamNameForTop.name)
             let rightScore = theMatch.findScore(aTeamforSide.name)
-            addSecondaryData(newTeamResultsRow, leftScore + ' - ' + rightScore)
+            addTableData(newTeamResultsRow, leftScore + ' - ' + rightScore)
           }
         }
-      addSecondaryData(newTeamResultsRow, aTeam.matchesPlayed, aTeam.matchesWon, aTeam.matchesLost, aTeam.matchesDrawn, aTeam.scoreFor, aTeam.scoreAgainst)
-      theTable.appendChild(newTeamResultsRow)
+        addTableData(newTeamResultsRow, aTeam.matchesPlayed, aTeam.matchesWon, aTeam.matchesLost, aTeam.matchesDrawn, aTeam.scoreFor, aTeam.scoreAgainst)
+        theTable.appendChild(newTeamResultsRow)
       }
       addSecondaryHeaders(newTableHeaderRow, 'Matches Played', 'Matches Won', 'Matches Lost', 'Matches Drawn', 'Points For', 'Points Against')
     }

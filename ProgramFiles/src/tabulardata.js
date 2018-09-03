@@ -26,7 +26,7 @@ function addTableHeaders (theTable, ...allHeaders) {
 
 // appends further headers to a table.
 function addSecondaryHeaders (theHeader, ...allHeaders) {
- let theFoundHeader = theHeader
+  let theFoundHeader = theHeader
   for (let aHeader of allHeaders) {
     newTableHeader = document.createElement('th')
     newTableHeader.innerHTML = aHeader
@@ -44,12 +44,4 @@ function addTableData (theRow, ...allData) {
   }
 }
 
-// appends further data to a target row
-function addSecondaryData (theRow, ...allData) {
-  let theFoundData = theRow
-  for (let aDataPoint of allData) {
-    newTableDataPoint = document.createElement('td')
-    newTableDataPoint.innerHTML = aDataPoint
-    theFoundData.appendChild(newTableDataPoint)
-  }
-}
+// deprecated function removed, no need for secondary data as regular function works. 29/08/18 AT

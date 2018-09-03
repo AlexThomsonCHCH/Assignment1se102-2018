@@ -128,9 +128,18 @@ class Tournament {// eslint-disable-line no-unused-vars
     // create Seperator
     var seperator = document.createElement('div')
     seperator.className = 'line-seperator'
+    blurbDiv.appendChild(seperator)
+
+    // create secondary para
+    var getBlurbPara4 = document.createElement('p')
+    getBlurbPara4.className = 'blurb'
+    var getBlurbPara4Node = document.createTextNode('To get started, Click on a button in the navigation bar to scroll to a results section')
+    getBlurbPara4.appendChild(getBlurbPara4Node)
+    blurbDiv.appendChild(getBlurbPara4)
+
     // append all to parent div
-    teamResultsDiv.appendChild(blurbDiv)
-    teamResultsDiv.appendChild(seperator)
+    blurbParentDiv.appendChild(blurbDiv)
+    allreturn.appendChild(blurbParentDiv)
   }
 
   // returns everything to the page
@@ -144,7 +153,7 @@ class Tournament {// eslint-disable-line no-unused-vars
 
     // Create Structure for Blurb
     var head2_4 = document.createElement('h2')
-    var head2_4Node = document.createTextNode('Welcome To The 2018 Commonwealth Games')
+    var head2_4Node = document.createTextNode('Welcome To The \n 2018 Commonwealth Games')
     head2_4.appendChild(head2_4Node)
     blurbDiv.appendChild(head2_4)
     this.getBlurb()
