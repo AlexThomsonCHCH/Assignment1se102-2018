@@ -1,0 +1,12 @@
+C:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles>standard
+standard: Use JavaScript Standard Style (https://standardjs.com)
+  C:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:148:9: Identifier 'head2_1' is not in camel case.
+  C:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:149:9: Identifier 'head2_1Node' is not in camel case.
+  C:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:155:9: Identifier 'head2_4' is not in camel case.
+  C:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:156:9: Identifier 'head2_4Node' is not in camel case.
+  C:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:162:9: Identifier 'head2_2' is not in camel case.
+  C:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:163:9: Identifier 'head2_2Node' is not in camel case.
+  C:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:169:9: Identifier 'head2_3' is not in camel case.
+  C:\Users\thoms\Dropbox\ARA\S2\BCSE102\Assignment1\Assignment1se102-2018\ProgramFiles\src\Tournament.js:170:9: Identifier 'head2_3Node' is not in camel case.
+
+Taken at 07:31 04/09/2018 +12:00:00 GMT 

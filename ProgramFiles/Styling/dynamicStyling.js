@@ -104,7 +104,7 @@ allMyThemes.push(new CountryStyle('wales', '#00AB39', 'white'))
 allMyThemes.push(new CountryStyle('zambia', '#198A00', 'orange'))
 
 // Testing addition of themes what themes are available in console:
-// allMyThemes.push(new CountryStyle('nyet', 'red', 'yellow'))
+allMyThemes.push(new CountryStyle('nyet', 'red', 'yellow'))
 // console.log(allMyThemes)
 
 // Calling The Theme Change

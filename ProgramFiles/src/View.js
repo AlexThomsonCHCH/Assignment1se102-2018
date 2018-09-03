@@ -1,6 +1,6 @@
 // This Page was added in SE101 Assignment 2 for the View Class.
 // TODO: Adapt for html to stop the webpage shitting itself with &nbsp; (See area for optimisation and changes.txt)
-          //Lean down this class and remove redundancy
+// Lean down this class and remove redundancy
 // Done: 15/08/17 & 04/09/2018
 // Page Commented by DEV: Alex T 17/08/2018
 
@@ -12,5 +12,5 @@ class View {// eslint-disable-line no-unused-vars
     return '<br>'
   }
 
-  //deprecated tab right and centre functions removed 04/09
+  // deprecated tab right and centre functions removed 04/09
 }
