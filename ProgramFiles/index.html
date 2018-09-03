@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>BCSE101 18S1 Programming Assignment 1</title>
@@ -26,10 +26,9 @@
   <header class="dynamicColoured">
 
     <!--Create a set of divs for the two seperate sections of the header (title and style selections) -->
-
+    <img src='styling/images/logo.png' id="logo" alt="logo">
     <div id="page-title">
-      <img src='styling/images/logo.png' id="logo">
-      <h1>The 2018 Commonwealth Games</h1>
+      <h1>The 2018 <br/> Commonwealth Games</h1>
     </div>
 
     <div id="imageSelector">
@@ -56,12 +55,21 @@
             <option value="uganda">Uganda</option>
             <option value="wales">Wales</option>
             <option value="zambia">Zambia</option>
+            <option value="nyet" disabled>Glorious</option>
           </select>
         </form>
       
     </div>
 
   </header>
+  <div id="header-seperator">
+  <nav id=nav-container>
+    <Button onclick="window.location.href='#blurbDiv'">About</Button>
+    <Button onclick="window.location.href='#matchResultsDiv'">Match Results</Button>
+    <Button onclick="window.location.href='#teamResultsDiv'"> Team Results</Button>
+    <Button onclick="window.location.href='#resultsDiv'"> Full Results Table </Button>
+  </nav>
+  </div>
 
   <main id='main'>
     <!--The Div where Information from CG2018 is displayed is placed here to allow for output-->
@@ -69,6 +77,11 @@
   </main>
 
   <footer class='dynamicColoured'>
+      <p>
+        <img style="border:0;width:88px;height:31px"
+          src="http://jigsaw.w3.org/css-validator/images/vcss"
+          alt="Valid CSS!" />
+    </p>
     <p class="blurb">&copy; Copyright Alex Thomson 2018</p>
   </footer>
 
@@ -109,7 +122,10 @@
     //Div for Blurb
     var blurbDiv = document.createElement('div')
     blurbDiv.id = 'blurbDiv'
-    blurbDiv.className = "resultsDiv"
+
+    var blurbParentDiv = document.createElement('div')
+    blurbParentDiv.id = 'blurbParentDiv'
+    blurbParentDiv.className = "resultsDiv dynamicColoured"
   </script> 
 
 </body>
