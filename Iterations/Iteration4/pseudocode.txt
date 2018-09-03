@@ -1,0 +1,28 @@
+makeTable (Parent Division):
+    define variable new table
+    let the variable = a new table element
+    set border properties of new table
+    append the new table to Parent Division
+
+addTableHeader (parent table, headers to be added):
+    define variable new table row
+    for header in headers:
+        define variable new table header
+        set the value to be header from loop
+        append to new table row
+    append the table row to table
+
+addSecondaryHeaders (parent row, headers to be added):
+    define variable found header = parent row
+    for header in headers:
+        define variable new table header
+        set the value to be header from loop
+        append to found header
+
+addTableData (parent row, data to be added):
+    define variable for new data
+    for datapoints in data:
+        create new td element for the varibale
+        set the value to be datapoint from loop
+        append to parent row
+    

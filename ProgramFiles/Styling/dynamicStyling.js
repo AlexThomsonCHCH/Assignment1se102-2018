@@ -2,7 +2,7 @@
 // TODO: Nothing as of Page Commented
 // Page Commented by DEV: Alex T 19/08/2018
 
-//lets create a list to store all our themes themes
+// lets create a list to store all our themes themes
 var allMyThemes = []
 
 // create a class to easily change theme and styling of webpage.
@@ -17,6 +17,8 @@ class CountryStyle {// eslint-disable-line no-unused-vars
   turnThisWPRad () {
     // Declare Variables for targeting
     var bg = document.getElementById('body')
+    var nav = document.getElementById('nav-container')
+    var navSeperator = document.getElementById('header-seperator')
     var mainbg = document.getElementById('main')
     var ddmenu = document.getElementById('TeamSelector')
 
@@ -31,6 +33,12 @@ class CountryStyle {// eslint-disable-line no-unused-vars
     for (var i = 0; i < coloured.length; i++) {
       coloured[i].style.backgroundColor = this.Background
     }
+
+    nav.style.backgroundColor = this.Background
+    nav.style.opacity = 0.9
+
+    navSeperator.style.backgroundColor = this.Foreground
+    navSeperator.style.opacity = 0.9
 
     mainbg.style.backgroundColor = this.Foreground
     mainbg.style.opacity = 0.9
@@ -54,6 +62,17 @@ class CountryStyle {// eslint-disable-line no-unused-vars
     var line = document.querySelectorAll('.line-seperator')
     for (var d = 0; d < line.length; d++) {
       line[d].style.backgroundColor = this.Foreground
+    }
+    // table colouring
+    var table = document.querySelectorAll('table')
+    for (var t = 0; t < table.length; t++) {
+      table[t].style.borderColor = this.Background
+    }
+
+    var tableheaderColour = document.querySelectorAll('th')
+    for (var e = 0; e < tableheaderColour.length; e++) {
+      tableheaderColour[e].style.color = this.Foreground
+      tableheaderColour[e].style.backgroundColor = this.Background
     }
 
     // styling our drop down menu now.
@@ -84,9 +103,10 @@ allMyThemes.push(new CountryStyle('uganda', 'black', '#FCDC04'))
 allMyThemes.push(new CountryStyle('wales', '#00AB39', 'white'))
 allMyThemes.push(new CountryStyle('zambia', '#198A00', 'orange'))
 
-// Testing:
-// allMyThemes.push(new CountryStyle('nyet', 'red', 'yellow'))
-console.log(allMyThemes)
+// Testing addition of themes what themes are available in console:
+allMyThemes.push(new CountryStyle('nyet', 'red', 'yellow'))
+// console.log(allMyThemes)
+
 // Calling The Theme Change
 function themechange () { // eslint-disable-line no-unused-vars
   let aTheme = this.allMyThemes.find(aTheme => (aTheme.Country === document.form2.jumpmenu.value))

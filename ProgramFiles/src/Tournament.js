@@ -2,7 +2,7 @@
 // TODO: Nothing as of Page Commented
 // Page Commented by DEV: Alex T 17/08/2018
 
-/* global Sport View matchResultsDiv teamResultsDiv resultsDiv blurbDiv allMyThemes allreturn */
+/* global Sport View matchResultsDiv teamResultsDiv blurbParentDiv resultsDiv blurbDiv allMyThemes allreturn */
 // eslint-disable no-unused-vars
 class Tournament {// eslint-disable-line no-unused-vars
   constructor (newName) {
@@ -114,7 +114,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     getBlurbPara2.className = 'blurb'
     getBlurbPara3.className = 'blurb'
     // Insert Text into nodes
-    var getBlurbPara1Node = document.createTextNode('The Gold Coast 2018 Commonwealth Games (GC2018) Welcomed more than 6,600 athletes and team officials from 71 Commonwealth nations and territories to the Gold Coast and event cities Brisbane, Cairns and Townsville, to share in the celebration of sport, entertainment and culture.')
+    var getBlurbPara1Node = document.createTextNode('The Gold Coast 2018 Commonwealth Games (GC2018) welcomed more than 6,600 athletes and team officials from 71 Commonwealth nations and territories to the Gold Coast and event cities Brisbane, Cairns and Townsville, to share in the celebration of sport, entertainment and culture.')
     var getBlurbPara2Node = document.createTextNode('This was the largest sporting event staged in Australia this decade, and featured the largest integrated sports program in Commonwealth Games history, comprising 18 sports and seven para-sports.')
     var getBlurbPara3Node = document.createTextNode("This Website documents some results from GC2018 including Netball, Men's Rugby Sevens and Women's Rugby Sevens.")
     // append to parents
@@ -128,9 +128,18 @@ class Tournament {// eslint-disable-line no-unused-vars
     // create Seperator
     var seperator = document.createElement('div')
     seperator.className = 'line-seperator'
+    blurbDiv.appendChild(seperator)
+
+    // create secondary para
+    var getBlurbPara4 = document.createElement('p')
+    getBlurbPara4.className = 'blurb'
+    var getBlurbPara4Node = document.createTextNode('To get started, Click on a button in the navigation bar to scroll to a results section')
+    getBlurbPara4.appendChild(getBlurbPara4Node)
+    blurbDiv.appendChild(getBlurbPara4)
+
     // append all to parent div
-    teamResultsDiv.appendChild(blurbDiv)
-    teamResultsDiv.appendChild(seperator)
+    blurbParentDiv.appendChild(blurbDiv)
+    allreturn.appendChild(blurbParentDiv)
   }
 
   // returns everything to the page
@@ -144,7 +153,7 @@ class Tournament {// eslint-disable-line no-unused-vars
 
     // Create Structure for Blurb
     var head2_4 = document.createElement('h2')
-    var head2_4Node = document.createTextNode('Welcome To The 2018 Commonwealth Games')
+    var head2_4Node = document.createTextNode('Welcome To The \n 2018 Commonwealth Games')
     head2_4.appendChild(head2_4Node)
     blurbDiv.appendChild(head2_4)
     this.getBlurb()

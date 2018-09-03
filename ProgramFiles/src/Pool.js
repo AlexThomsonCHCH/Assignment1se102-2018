@@ -74,43 +74,5 @@ class Pool {// eslint-disable-line no-unused-vars
     return this.allMyMatches.find(aMatch => ((aMatch.myTeamA === teamA && aMatch.myTeamB === teamB) || (aMatch.myTeamB === teamA && aMatch.myTeamA === teamB)))
   }
 
-  getResults () {
-    // sort teams
-    this.sortTeamsByRank()
-
-    // def variables
-    let result = ''
-    let topLine = View.SPACES(6)
-    // get short team names and list them along for tabular
-    for (let aTeamForTopLine of this.allMyTeams) {
-      let topName = aTeamForTopLine.shortName
-      topLine += View.centre(topName, 7)
-      let sideName = aTeamForTopLine.shortName
-      result += sideName + View.SPACES(2)
-      for (let aTeamForSide of this.allMyTeams) {
-        // stop values being returned for same team
-        if (topName === aTeamForSide.shortName) {
-          result += View.centre('XXXXX', 7)
-        } else {
-          let theMatch = this.findMatch(aTeamForTopLine, aTeamForSide)
-          let leftScore = theMatch.findScore(aTeamForTopLine.name)
-          let rightScore = theMatch.findScore(aTeamForSide.name)
-          let score = leftScore + '-' + rightScore
-          result += View.centre(score, 7)
-        }
-      }
-      // append results
-      result += aTeamForTopLine.getResults() + '\n'
-    }
-
-    // returning all values
-    topLine += View.padRight('Played')
-    topLine += View.padRight('Won')
-    topLine += View.padRight('Lost')
-    topLine += View.padRight('Draw')
-    topLine += View.padRight('For')
-    topLine += View.padRight('Against')
-    result = topLine + '\n' + result + '\n'
-    return result
-  }
+  // Deprecated Function getResults() Removed 28/08/18 AT. For New Function See sport.getResults()
 }
