@@ -17,6 +17,7 @@
   <script src="src/Controller.js"></script>
   <script src="src/addPoolResults.js"></script>
   <script src="src/shortNames.js"></script>
+  <script src="src/fileLoader.js"></script>
   <link rel="stylesheet" href="Styling/stylesheet.css">
   
 </head>
@@ -63,6 +64,13 @@
 
   </header>
   <div id="header-seperator">
+    <div id='loaderBar'>
+      <div id="loaderParent">
+        <input type="file" id="divloader" onclick="fileHandler">
+        <label for="divloader">Choose a File</label> 
+      </div>
+      <input type="button" id="GO!" value="Display Results" onclick='the2018Games.getAll()'>
+    </div>
   <nav id=nav-container>
     <Button onclick="window.location.href='#blurbDiv'">About</Button>
     <Button onclick="window.location.href='#matchResultsDiv'">Match Results</Button>
@@ -87,45 +95,47 @@
 
   <script>
     //This area is where the script for dynamic content and tournament is run.
-    var the2018Games // GLOBAL FOR DEBUGGING
-    var go = function () {
-      the2018Games = Controller.setup()
-      let theDisplay = document.getElementById( 'divDisplay')
-      addPoolResults(the2018Games) // NEW LINE FOR ASSIGNMENT 2
-      addShortNames(the2018Games) // NEW LINE FOR ASSIGNMENT 2
-      theDisplay.body = the2018Games.getAll()
-      console.log( the2018Games ) 
-     }
-    window.onload = go;
+  var the2018Games // GLOBAL FOR DEBUGGING
 
-    //assign global variables for some Child Divs in order to display correctly
+  var fileHandler = function() {
+    document.getElementById('divloader').addEventListener('change', fileChangeHandler);
+  }
 
-    //rootdiv
-    var allreturn = document.createElement('div')
-    allreturn.id = 'allreturn'
-    
-    //Div for all matches
-    var matchResultsDiv = document.createElement('div')
-    matchResultsDiv.id = 'matchResultsDiv'
-    matchResultsDiv.className = "resultsDiv dynamicColoured"
+  let aTheme = allMyThemes.find(aTheme => (aTheme.Country === 'australia'))
+  aTheme.turnThisWPRad()
 
-    //Div for all Team Results
-    var teamResultsDiv = document.createElement('div')
-    teamResultsDiv.id = 'teamResultsDiv'
-    teamResultsDiv.className = "resultsDiv dynamicColoured"
 
-    //Div for all results table
-    var resultsDiv = document.createElement('div')
-    resultsDiv.id = 'resultsDiv'
-    resultsDiv.className = "resultsDiv dynamicColoured"
+  window.onload = fileHandler;
+  
 
-    //Div for Blurb
-    var blurbDiv = document.createElement('div')
-    blurbDiv.id = 'blurbDiv'
+  //assign global variables for some Child Divs in order to display correctly
 
-    var blurbParentDiv = document.createElement('div')
-    blurbParentDiv.id = 'blurbParentDiv'
-    blurbParentDiv.className = "resultsDiv dynamicColoured"
+  //rootdiv
+  var allreturn = document.createElement('div')
+  allreturn.id = 'allreturn'
+  
+  //Div for all matches
+  var matchResultsDiv = document.createElement('div')
+  matchResultsDiv.id = 'matchResultsDiv'
+  matchResultsDiv.className = "resultsDiv dynamicColoured"
+
+  //Div for all Team Results
+  var teamResultsDiv = document.createElement('div')
+  teamResultsDiv.id = 'teamResultsDiv'
+  teamResultsDiv.className = "resultsDiv dynamicColoured"
+
+  //Div for all results table
+  var resultsDiv = document.createElement('div')
+  resultsDiv.id = 'resultsDiv'
+  resultsDiv.className = "resultsDiv dynamicColoured"
+
+  //Div for Blurb
+  var blurbDiv = document.createElement('div')
+  blurbDiv.id = 'blurbDiv'
+
+  var blurbParentDiv = document.createElement('div')
+  blurbParentDiv.id = 'blurbParentDiv'
+  blurbParentDiv.className = "resultsDiv dynamicColoured"
   </script> 
 
 </body>

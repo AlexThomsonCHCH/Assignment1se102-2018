@@ -28,18 +28,56 @@ main{
     padding: 15px;
     padding-bottom:0px;
 }
-nav {
+nav, #loaderBar{
     padding: 1rem;
     height: 3rem;
     display: flex;
     justify-content: space-around;
 }
 
-nav button {
+nav button, #loaderBar div, #loaderBar input {
     flex-grow: 1;
     margin-left: 5px;
     margin-right: 5px;
 }
+
+#divloader {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+label{
+    text-align: center;
+    flex-basis: 100%;
+}
+
+#divloader + label {
+    padding: 1rem;
+    align-self: center;
+    display: inline-block;
+}
+
+#loaderParent {
+    background-color: #e4e4e4;
+    font: 400 13.3333px Arial;
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px #9fa1a5;
+}
+
+#loaderParent:active {
+    background-color: #e8ebee;
+}
+
+label:hover {
+    border: solid 1px #87888a;
+}   
+
+
 
 .resultsDiv{
     white-space:  pre-wrap;
