@@ -181,9 +181,8 @@ class Tournament {// eslint-disable-line no-unused-vars
     let theDisplay = document.getElementById('divDisplay')
     theDisplay.appendChild(allreturn)
 
-    // apply our base theme
-    let aTheme = allMyThemes.find(aTheme => (aTheme.Country === 'australia'))
-    aTheme.turnThisWPRad()
+    // apply our selected theme
+    themechange()
   }
 
   // finds a target sport in allmysports.

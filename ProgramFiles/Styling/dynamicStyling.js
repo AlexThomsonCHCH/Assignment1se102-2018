@@ -19,11 +19,12 @@ class CountryStyle {// eslint-disable-line no-unused-vars
     var bg = document.getElementById('body')
     var nav = document.getElementById('nav-container')
     var navSeperator = document.getElementById('header-seperator')
+    var fileLoader = document.getElementById('loaderBar')
     var mainbg = document.getElementById('main')
     var ddmenu = document.getElementById('TeamSelector')
 
     // Lets Style the Flag in the Background
-    bg.style.background = 'linear-gradient(transparent ,white 90%), url(Styling/images/' + this.Country + '.png)'
+    bg.style.background = 'linear-gradient(transparent, white 90%), url(Styling/images/' + this.Country + '.png)'
     bg.style.backgroundRepeat = 'repeat-y'
     bg.style.backgroundAttachment = 'fixed'
     bg.style.backgroundSize = 'cover'
@@ -39,6 +40,9 @@ class CountryStyle {// eslint-disable-line no-unused-vars
 
     navSeperator.style.backgroundColor = this.Foreground
     navSeperator.style.opacity = 0.9
+
+    fileLoader.style.backgroundColor = this.Background
+    fileLoader.style.opacity = 0.9
 
     mainbg.style.backgroundColor = this.Foreground
     mainbg.style.opacity = 0.9
@@ -63,6 +67,7 @@ class CountryStyle {// eslint-disable-line no-unused-vars
     for (var d = 0; d < line.length; d++) {
       line[d].style.backgroundColor = this.Foreground
     }
+
     // table colouring
     var table = document.querySelectorAll('table')
     for (var t = 0; t < table.length; t++) {

@@ -36,7 +36,7 @@
         <!--This Area Is Reserved for Styling - Will be added in Iteration 3 (It2)-->
         <form name="form2">
           <select name="jumpmenu" id="TeamSelector" onChange=themechange()>
-            <option selected disabled>Change Team:</option>
+            <option selected disabled value="australia">Change Team:</option>
             <option value="australia">Australia</option>
             <option value="barbados">Barbados</option>
             <option value="canada">Canada</option>
@@ -66,11 +66,12 @@
   <div id="header-seperator">
     <div id='loaderBar'>
       <div id="loaderParent">
-        <input type="file" id="divloader" onclick="fileHandler">
+        <input type="file" id="divloader" accept=".json" onclick="fileHandler">
         <label for="divloader">Choose a File</label> 
       </div>
       <input type="button" id="GO!" value="Display Results" onclick='the2018Games.getAll()'>
     </div>
+
   <nav id=nav-container>
     <Button onclick="window.location.href='#blurbDiv'">About</Button>
     <Button onclick="window.location.href='#matchResultsDiv'">Match Results</Button>
