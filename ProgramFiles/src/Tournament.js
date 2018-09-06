@@ -181,7 +181,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     let theDisplay = document.getElementById('divDisplay')
     theDisplay.appendChild(allreturn)
 
-    // apply our selected theme
+    // apply our selected theme 
     themechange()
   }
 

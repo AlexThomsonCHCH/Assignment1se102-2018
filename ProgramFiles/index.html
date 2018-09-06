@@ -19,7 +19,11 @@
   <script src="src/shortNames.js"></script>
   <script src="src/fileLoader.js"></script>
   <link rel="stylesheet" href="Styling/stylesheet.css">
-  
+
+  <!--Favicon Link here-->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
 </head>
           
 <body id="body">
@@ -72,7 +76,7 @@
       <input type="button" id="GO!" value="Display Results" onclick='the2018Games.getAll()'>
     </div>
 
-  <nav id=nav-container>
+  <nav id='nav-container'>
     <Button onclick="window.location.href='#blurbDiv'">About</Button>
     <Button onclick="window.location.href='#matchResultsDiv'">Match Results</Button>
     <Button onclick="window.location.href='#teamResultsDiv'"> Team Results</Button>
@@ -102,12 +106,12 @@
     document.getElementById('divloader').addEventListener('change', fileChangeHandler);
   }
 
+  //style our default Theme on Page load
   let aTheme = allMyThemes.find(aTheme => (aTheme.Country === 'australia'))
   aTheme.turnThisWPRad()
 
 
   window.onload = fileHandler;
-  
 
   //assign global variables for some Child Divs in order to display correctly
 
