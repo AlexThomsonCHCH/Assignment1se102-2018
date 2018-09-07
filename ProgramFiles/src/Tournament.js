@@ -2,7 +2,7 @@
 // TODO: Nothing as of Page Commented
 // Page Commented by DEV: Alex T 17/08/2018
 
-/* global Sport View matchResultsDiv teamResultsDiv blurbParentDiv resultsDiv blurbDiv allMyThemes allreturn */
+/* global Sport View matchResultsDiv teamResultsDiv blurbParentDiv resultsDiv blurbDiv themechange allreturn */
 // eslint-disable no-unused-vars
 class Tournament {// eslint-disable-line no-unused-vars
   constructor (newName) {
@@ -181,7 +181,7 @@ class Tournament {// eslint-disable-line no-unused-vars
     let theDisplay = document.getElementById('divDisplay')
     theDisplay.appendChild(allreturn)
 
-    // apply our selected theme 
+    // apply our selected theme
     themechange()
   }
 

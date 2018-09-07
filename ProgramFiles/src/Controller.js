@@ -5,7 +5,7 @@
 /* global Tournament */
 class Controller {// eslint-disable-line no-unused-vars
   static setup (theTournament) {
-    const APRIL = 3 // JAN = 0!
+    let APRIL = 3 // eslint-disable-line no-unused-vars
     let the2018Games = new Tournament('Gold Coast 2018 Commonwealth Games')
     for (let aSport of theTournament.sports) {
       let mySport = the2018Games.addSport(aSport.name, aSport.venue)
