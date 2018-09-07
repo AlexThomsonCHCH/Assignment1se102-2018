@@ -1,6 +1,6 @@
-// This Page was added in SE101 Assignment 2 for the Tournament Class.
+// This Page was added in SE102 Assignment 2 for the loading json
 // TODO: Nothing as of Page Commented
-// Page Commented by DEV: Alex T 17/08/2018
+// Page Commented by DEV: Alex T 07/09/2018
 
 /* global the2018Games Controller addPoolResults addShortNames FileReader alert */
 
